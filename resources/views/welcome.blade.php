@@ -3,12 +3,21 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <title>Laravel</title>
+        <style>
+            body{
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                background-image: url('/images/ho.jpg');
+            }
+        </style>
     </head>
     <body>
         <div id="app">
-            <example-component></example-component>
+            <navbar-component :brand="{name: 'Freshlancers', link: '/images/flogo.jpg'}"></navbar-component>
         </div>
     </body>
 <script src="{{ asset('js/app.js') }}"></script>
