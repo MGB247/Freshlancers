@@ -47265,7 +47265,7 @@ exports = module.exports = __webpack_require__(42)(false);
 
 
 // module
-exports.push([module.i, "\n.cust-nav[data-v-485090b2] {\r\n  background-color: black;\r\n  -webkit-filter: opacity(0.85);\r\n          filter: opacity(0.85);\n}\n.navbar-brand[data-v-485090b2] {\r\n  font-size: 22px;\r\n  font-weight: bolder;\n}\n.nav-item[data-v-485090b2] {\r\n  font-size: 16px;\r\n  font-weight: bold;\n}\n.active[data-v-485090b2] {\r\n  color: white !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.cust-nav[data-v-485090b2] {\r\n  background-color: black;\r\n  -webkit-filter: opacity(0.85);\r\n          filter: opacity(0.85);\r\n  padding-top: unset;\r\n  padding-bottom: unset;\n}\n.navbar-brand[data-v-485090b2] {\r\n  font-size: 22px;\r\n  font-weight: bolder;\n}\n.navbar-brand img[data-v-485090b2] {\r\n  border-radius: 50%;\n}\n.nav-item[data-v-485090b2] {\r\n  font-size: 16px;\r\n  font-weight: bold;\n}\n.active[data-v-485090b2] {\r\n  color: white !important;\n}\r\n", ""]);
 
 // exports
 
@@ -47751,7 +47751,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "navbar",
-  props: ["brand"]
+  props: ["brand"],
+  methods: {
+    initializeListeners: function initializeListeners() {
+      var links = document.getElementsByClassName("nav-item");
+      for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", this.setActive);
+      }
+    },
+    setActive: function setActive(navItem) {
+      var links = document.getElementsByClassName("nav-item");
+      for (var i = 0; i < links.length; i++) {
+        links[i].classList.remove("active");
+      }
+      navItem.target.classList.add("active");
+    }
+  },
+  mounted: function mounted() {
+    this.initializeListeners();
+  }
 });
 
 /***/ }),
@@ -47768,7 +47786,7 @@ var render = function() {
     [
       _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
         _c("img", {
-          attrs: { src: _vm.brand.link, width: "90", height: "90", alt: "" }
+          attrs: { src: _vm.brand.link, width: "100", height: "100", alt: "" }
         }),
         _vm._v("\n      " + _vm._s(_vm.brand.name))
       ]),
@@ -47812,10 +47830,14 @@ var staticRenderFns = [
       },
       [
         _c("div", { staticClass: "navbar-nav" }, [
-          _c("a", { staticClass: "nav-item nav-link", attrs: { href: "#" } }, [
-            _vm._v("Home "),
-            _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
-          ]),
+          _c(
+            "a",
+            { staticClass: "nav-item nav-link active", attrs: { href: "#" } },
+            [
+              _vm._v("Home "),
+              _c("span", { staticClass: "sr-only" }, [_vm._v("(current)")])
+            ]
+          ),
           _vm._v(" "),
           _c("a", { staticClass: "nav-item nav-link", attrs: { href: "#a" } }, [
             _vm._v("About")
