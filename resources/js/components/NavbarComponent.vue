@@ -47,6 +47,7 @@ export default {
 .cust-nav {
   background-color: black;
   filter: opacity(0.85);
+  border-bottom: 2px solid white;
   padding-top: unset;
   padding-bottom: unset;
 }

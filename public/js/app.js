@@ -47265,7 +47265,7 @@ exports = module.exports = __webpack_require__(42)(false);
 
 
 // module
-exports.push([module.i, "\n.cust-nav[data-v-485090b2] {\r\n  background-color: black;\r\n  -webkit-filter: opacity(0.85);\r\n          filter: opacity(0.85);\r\n  padding-top: unset;\r\n  padding-bottom: unset;\n}\n.navbar-brand[data-v-485090b2] {\r\n  font-size: 22px;\r\n  font-weight: bolder;\n}\n.navbar-brand img[data-v-485090b2] {\r\n  border-radius: 50%;\n}\n.nav-item[data-v-485090b2] {\r\n  font-size: 16px;\r\n  font-weight: bold;\n}\n.active[data-v-485090b2] {\r\n  color: white !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.cust-nav[data-v-485090b2] {\r\n  background-color: black;\r\n  -webkit-filter: opacity(0.85);\r\n          filter: opacity(0.85);\r\n  border-bottom: 2px solid white;\r\n  padding-top: unset;\r\n  padding-bottom: unset;\n}\n.navbar-brand[data-v-485090b2] {\r\n  font-size: 22px;\r\n  font-weight: bolder;\n}\n.navbar-brand img[data-v-485090b2] {\r\n  border-radius: 50%;\n}\n.nav-item[data-v-485090b2] {\r\n  font-size: 16px;\r\n  font-weight: bold;\n}\n.active[data-v-485090b2] {\r\n  color: white !important;\n}\r\n", ""]);
 
 // exports
 
