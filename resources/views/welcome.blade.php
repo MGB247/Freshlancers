@@ -7,17 +7,23 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <title>Freshlancers</title>
         <style>
+            html, #app{
+                height: 100%;
+                width: 100%;
+            }
             body{
                 width: 100%;
                 height: 100%;
                 background-color: white;
-                background-image: url('/images/ho.jpg');
+                overflow-x: hidden;
+                position: absolute;
             }
         </style>
     </head>
     <body>
         <div id="app">
             <navbar-component :brand="{name: 'Freshlancers', link: '/images/flogo2.png'}"></navbar-component>
+            <image-component :image="{src: '/images/ho.jpg', alt: 'Image', height: '100%', width: '100%'}"></image-component>
         </div>
     </body>
 <script src="{{ asset('js/app.js') }}"></script>

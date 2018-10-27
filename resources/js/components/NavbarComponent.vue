@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark cust-nav">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark cust-nav">
   <a class="navbar-brand" href="/">
       <img v-bind:src="brand.link" width="100" height="100" alt="">
       {{brand.name}}</a>

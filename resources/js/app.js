@@ -15,6 +15,7 @@ window.Vue = require("vue");
  */
 
 Vue.component("navbar-component", require("./components/NavbarComponent.vue"));
+Vue.component("image-component", require("./components/ImageComponent.vue"));
 
 const app = new Vue({
     el: "#app"
