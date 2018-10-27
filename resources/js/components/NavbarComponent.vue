@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark cust-nav">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark cust-nav">
   <a class="navbar-brand" href="/">
       <img v-bind:src="brand.link" width="100" height="100" alt="">
       {{brand.name}}</a>
@@ -28,6 +28,8 @@ export default {
       for (var i = 0; i < links.length; i++) {
         links[i].addEventListener("click", this.setActive);
       }
+
+      document.addEventListener("scroll", this.setFilter);
     },
     setActive: function(navItem) {
       var links = document.getElementsByClassName("nav-item");
@@ -35,6 +37,14 @@ export default {
         links[i].classList.remove("active");
       }
       navItem.target.classList.add("active");
+    },
+    setFilter: function() {
+      var navbar = document.getElementsByClassName("navbar")[0];
+      if (document.scrollingElement.scrollTop > 100) {
+        navbar.classList.add("filter");
+      } else {
+        navbar.classList.remove("filter");
+      }
     }
   },
   mounted() {
@@ -46,10 +56,14 @@ export default {
 <style scoped>
 .cust-nav {
   background-color: black;
-  filter: opacity(0.85);
   border-bottom: 2px solid white;
   padding-top: unset;
   padding-bottom: unset;
+  transition: 0.5s all;
+}
+
+.filter {
+  filter: opacity(0.85);
 }
 
 .navbar-brand {

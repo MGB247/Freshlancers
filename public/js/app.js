@@ -47685,7 +47685,7 @@ exports = module.exports = __webpack_require__(11)(false);
 
 
 // module
-exports.push([module.i, "\n.cust-nav[data-v-485090b2] {\r\n  background-color: black;\r\n  -webkit-filter: opacity(0.85);\r\n          filter: opacity(0.85);\r\n  border-bottom: 2px solid white;\r\n  padding-top: unset;\r\n  padding-bottom: unset;\n}\n.navbar-brand[data-v-485090b2] {\r\n  font-size: 22px;\r\n  font-weight: bolder;\n}\n.navbar-brand img[data-v-485090b2] {\r\n  border-radius: 50%;\n}\n.nav-item[data-v-485090b2] {\r\n  font-size: 16px;\r\n  font-weight: bold;\n}\n.active[data-v-485090b2] {\r\n  color: white !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.cust-nav[data-v-485090b2] {\r\n  background-color: black;\r\n  border-bottom: 2px solid white;\r\n  padding-top: unset;\r\n  padding-bottom: unset;\r\n  -webkit-transition: 0.5s all;\r\n  transition: 0.5s all;\n}\n.filter[data-v-485090b2] {\r\n  -webkit-filter: opacity(0.85);\r\n          filter: opacity(0.85);\n}\n.navbar-brand[data-v-485090b2] {\r\n  font-size: 22px;\r\n  font-weight: bolder;\n}\n.navbar-brand img[data-v-485090b2] {\r\n  border-radius: 50%;\n}\n.nav-item[data-v-485090b2] {\r\n  font-size: 16px;\r\n  font-weight: bold;\n}\n.active[data-v-485090b2] {\r\n  color: white !important;\n}\r\n", ""]);
 
 // exports
 
@@ -47759,6 +47759,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       for (var i = 0; i < links.length; i++) {
         links[i].addEventListener("click", this.setActive);
       }
+
+      document.addEventListener("scroll", this.setFilter);
     },
     setActive: function setActive(navItem) {
       var links = document.getElementsByClassName("nav-item");
@@ -47766,6 +47768,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         links[i].classList.remove("active");
       }
       navItem.target.classList.add("active");
+    },
+    setFilter: function setFilter() {
+      var navbar = document.getElementsByClassName("navbar")[0];
+      if (document.scrollingElement.scrollTop > 100) {
+        navbar.classList.add("filter");
+      } else {
+        navbar.classList.remove("filter");
+      }
     }
   },
   mounted: function mounted() {
@@ -47783,7 +47793,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "nav",
-    { staticClass: "navbar sticky-top navbar-expand-lg navbar-dark cust-nav" },
+    { staticClass: "navbar fixed-top navbar-expand-lg navbar-dark cust-nav" },
     [
       _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
         _c("img", {
@@ -47974,7 +47984,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "image",
+  name: "imageHolder",
   props: ["image"]
 });
 

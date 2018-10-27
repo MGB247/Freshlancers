@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "image",
+  name: "imageHolder",
   props: ["image"]
 };
 </script>
