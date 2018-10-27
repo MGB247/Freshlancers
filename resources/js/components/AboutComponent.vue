@@ -11,7 +11,7 @@
                 <img src="/images/abt.png" alt="About Us">
             </div>
         </div>
-        <scroll-component linkto="#" up="1"></scroll-component>
+        <scroll-component linkto="#workforce" down="1"></scroll-component>
     </div>
 </template>
 
