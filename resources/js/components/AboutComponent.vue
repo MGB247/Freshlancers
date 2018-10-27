@@ -11,13 +11,18 @@
                 <img src="/images/abt.png" alt="About Us">
             </div>
         </div>
+        <scroll-component linkto="#" up="1"></scroll-component>
     </div>
 </template>
 
 <script>
+import ScrollComponent from "./ScrollComponent.vue";
 export default {
   name: "about",
-  props: ["heading"]
+  props: ["heading"],
+  components: {
+    ScrollComponent
+  }
 };
 </script>
 
