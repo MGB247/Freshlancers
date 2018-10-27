@@ -47924,9 +47924,11 @@ var staticRenderFns = [
             _vm._v("Services")
           ]),
           _vm._v(" "),
-          _c("a", { staticClass: "nav-item nav-link", attrs: { href: "#c" } }, [
-            _vm._v("Workforce")
-          ]),
+          _c(
+            "a",
+            { staticClass: "nav-item nav-link", attrs: { href: "#workforce" } },
+            [_vm._v("Workforce")]
+          ),
           _vm._v(" "),
           _c("a", { staticClass: "nav-item nav-link", attrs: { href: "#d" } }, [
             _vm._v("Contact")
@@ -48401,7 +48403,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\nh1[data-v-48107bee] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\np[data-v-48107bee] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 2vw;\n}\n.hexagonsHolder[data-v-48107bee],\r\n.activeHex[data-v-48107bee] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\n.activeHex > div[data-v-48107bee] {\r\n  width: 50%;\n}\n#hex1[data-v-48107bee],\r\n#hex2[data-v-48107bee],\r\n#hex3[data-v-48107bee],\r\n#hex4[data-v-48107bee],\r\n#hex5[data-v-48107bee],\r\n#hex6[data-v-48107bee] {\r\n  background-image: url(http://csshexagon.com/img/meow.jpg);\n}\n.hexagon[data-v-48107bee] {\r\n  position: relative;\r\n  width: 150px;\r\n  height: 86.6px;\r\n  margin: 86.6px 20px;\r\n  background-size: auto 173.2051px;\r\n  background-position: center;\n}\n.hexTop[data-v-48107bee],\r\n.hexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 106.07px;\r\n  height: 106.07px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 21.97px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.hexTop[data-v-48107bee]:after,\r\n.hexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 150px;\r\n  height: 86.60254037844388px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.hexTop[data-v-48107bee] {\r\n  top: -53.033px;\n}\n.hexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.hexBottom[data-v-48107bee] {\r\n  bottom: -53.033px;\n}\n.hexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.hexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 150px;\r\n  height: 86.6025px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n.activeHexagon[data-v-48107bee] {\r\n  left: calc(50% - 175px);\r\n  position: relative;\r\n  width: 350px;\r\n  height: 202.07px;\r\n  margin: 101.04px 0;\r\n  background-size: auto 404.1452px;\r\n  background-position: center;\n}\n.activeHexTop[data-v-48107bee],\r\n.activeHexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 247.49px;\r\n  height: 247.49px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 51.26px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.activeHexTop[data-v-48107bee]:after,\r\n.activeHexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 350px;\r\n  height: 202.07259421636903px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.activeHexTop[data-v-48107bee] {\r\n  top: -123.7437px;\n}\n.activeHexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.activeHexBottom[data-v-48107bee] {\r\n  bottom: -123.7437px;\n}\n.activeHexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.activeHexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 350px;\r\n  height: 202.0726px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n@media screen and (max-width: 800px) {\n.activeHex > div[data-v-48107bee] {\r\n    width: 100%;\n}\n}\r\n", ""]);
+exports.push([module.i, "\nh1[data-v-48107bee] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\nh2[data-v-48107bee] {\r\n  text-align: center;\r\n  font-size: 3vw;\n}\np[data-v-48107bee] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 2vw;\n}\n.hexagonsHolder[data-v-48107bee],\r\n.activeHex[data-v-48107bee] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\n.activeHex > div[data-v-48107bee] {\r\n  width: 50%;\n}\n#hex1[data-v-48107bee] {\r\n  background-image: url(\"/images/p1.jpg\");\n}\n#hex2[data-v-48107bee] {\r\n  background-image: url(\"/images/p2.jpg\");\n}\n#hex3[data-v-48107bee] {\r\n  background-image: url(\"/images/p3.jpg\");\n}\n#hex4[data-v-48107bee] {\r\n  background-image: url(\"/images/p4.jpg\");\n}\n#hex5[data-v-48107bee] {\r\n  background-image: url(\"/images/p5.jpg\");\n}\n#hex6[data-v-48107bee] {\r\n  background-image: url(\"/images/p6.jpg\");\n}\n.hexagon[data-v-48107bee] {\r\n  position: relative;\r\n  width: 150px;\r\n  height: 86.6px;\r\n  margin: 86.6px 20px;\r\n  background-size: auto 173.2051px;\r\n  background-position: center;\n}\n.hexTop[data-v-48107bee],\r\n.hexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 106.07px;\r\n  height: 106.07px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 21.97px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.hexTop[data-v-48107bee]:after,\r\n.hexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 150px;\r\n  height: 86.60254037844388px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.hexTop[data-v-48107bee] {\r\n  top: -53.033px;\n}\n.hexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.hexBottom[data-v-48107bee] {\r\n  bottom: -53.033px;\n}\n.hexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.hexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 150px;\r\n  height: 86.6025px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n.activeHexagon[data-v-48107bee] {\r\n  left: calc(50% - 175px);\r\n  position: relative;\r\n  width: 350px;\r\n  height: 202.07px;\r\n  margin: 101.04px 0;\r\n  background-size: auto 404.1452px;\r\n  background-position: center;\r\n  -webkit-transition: 0.5s all;\r\n  transition: 0.5s all;\n}\n.activeHexTop[data-v-48107bee],\r\n.activeHexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 247.49px;\r\n  height: 247.49px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 51.26px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.activeHexTop[data-v-48107bee]:after,\r\n.activeHexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 350px;\r\n  height: 202.07259421636903px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.activeHexTop[data-v-48107bee] {\r\n  top: -123.7437px;\n}\n.activeHexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.activeHexBottom[data-v-48107bee] {\r\n  bottom: -123.7437px;\n}\n.activeHexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.activeHexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 350px;\r\n  height: 202.0726px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n#sc[data-v-48107bee] {\r\n  position: relative;\r\n  bottom: -8vw; /* Yet to know why */\n}\n@media screen and (max-width: 800px) {\n.activeHex > div[data-v-48107bee] {\r\n    width: 100%;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -48412,6 +48414,10 @@ exports.push([module.i, "\nh1[data-v-48107bee] {\r\n  text-align: center;\r\n  f
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__);
+//
+//
 //
 //
 //
@@ -48438,13 +48444,37 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      activeHexID: 1
+      activeHexID: Math.ceil(Math.random() * 10 % 6),
+      activeMember: [{}],
+      members: [{
+        name: "Syed Hameez Rehman",
+        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      }, {
+        name: "Muhammad Ghayas Baig",
+        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      }, {
+        name: "Raafe Bin Asad",
+        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      }, {
+        name: "Abdullah Sherazi",
+        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      }, {
+        name: "Ehsan Shafique",
+        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      }, {
+        name: "Syed Asad Haider Rizvi",
+        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      }]
     };
   },
   props: ["heading"],
+  components: {
+    ScrollComponent: __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue___default.a
+  },
   methods: {
     initializeListeners: function initializeListeners() {
       var hexagons = document.getElementsByClassName("hexagon");
@@ -48453,12 +48483,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     },
     setActive: function setActive(hexagon) {
-      var clickedHexID = hexagon.target.getAttribute("id");
-      this.activeHexID = clickedHexID[clickedHexID.length - 1];
+      //Start Fading Out
+      document.getElementsByClassName("memberInfo")[0].classList.add("fadeOut");
+
+      //Set Timeout for FadeOut
+      setTimeout(function () {
+        //Remove Fade Out
+        document.getElementsByClassName("memberInfo")[0].classList.remove("fadeOut");
+
+        //Start Fading In
+        document.getElementsByClassName("memberInfo")[0].classList.add("fadeIn");
+
+        //Change Data while fading In
+        var clickedHexID = hexagon.target.getAttribute("id");
+        this.activeHexID = clickedHexID[clickedHexID.length - 1];
+        this.activeMember = this.members[this.activeHexID - 1];
+
+        //Set Timeout for Fade In
+        setTimeout(function () {
+          //Remove Fade In
+          document.getElementsByClassName("memberInfo")[0].classList.remove("fadeIn");
+        }, 250);
+      }.bind(this), 250);
     }
   },
   mounted: function mounted() {
     this.initializeListeners();
+    this.activeMember = this.members[this.activeHexID - 1];
   }
 });
 
@@ -48470,59 +48521,57 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "contains", attrs: { id: "workforce" } }, [
-    _c("h1", [_vm._v("\r\n        " + _vm._s(_vm.heading) + "\r\n    ")]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "hexagonsHolder" },
-      _vm._l(6, function(n) {
-        return _c(
-          "div",
-          { key: n, staticClass: "hexagon", attrs: { id: "hex" + n } },
-          [
-            _c("div", { staticClass: "hexTop" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "hexBottom" })
-          ]
-        )
-      })
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "activeHex" }, [
-      _c("div", { staticClass: "hexagonHolder" }, [
-        _c(
-          "div",
-          {
-            staticClass: "activeHexagon",
-            attrs: { id: "hex" + _vm.activeHexID }
-          },
-          [
-            _c("div", { staticClass: "activeHexTop" }),
-            _vm._v(" "),
-            _c("div", { staticClass: "activeHexBottom" })
-          ]
-        )
+  return _c(
+    "div",
+    { staticClass: "contains", attrs: { id: "workforce" } },
+    [
+      _c("h1", [_vm._v("\r\n        " + _vm._s(_vm.heading) + "\r\n    ")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "hexagonsHolder" },
+        _vm._l(6, function(n) {
+          return _c(
+            "div",
+            { key: n, staticClass: "hexagon", attrs: { id: "hex" + n } },
+            [
+              _c("div", { staticClass: "hexTop" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "hexBottom" })
+            ]
+          )
+        })
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "activeHex" }, [
+        _c("div", { staticClass: "hexagonHolder" }, [
+          _c(
+            "div",
+            {
+              staticClass: "activeHexagon",
+              attrs: { id: "hex" + _vm.activeHexID }
+            },
+            [
+              _c("div", { staticClass: "activeHexTop" }),
+              _vm._v(" "),
+              _c("div", { staticClass: "activeHexBottom" })
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "memberInfo animated" }, [
+          _c("h2", [_vm._v(_vm._s(_vm.activeMember.name))]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.activeMember.info))])
+        ])
       ]),
       _vm._v(" "),
-      _vm._m(0)
-    ])
-  ])
+      _c("scroll-component", { attrs: { id: "sc", linkto: "#", down: "1" } })
+    ],
+    1
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "memberInfo" }, [
-      _c("p", [
-        _vm._v(
-          "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

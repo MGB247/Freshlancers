@@ -11,7 +11,7 @@
       <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="#about">About</a>
       <a class="nav-item nav-link" href="#b">Services</a>
-      <a class="nav-item nav-link" href="#c">Workforce</a>
+      <a class="nav-item nav-link" href="#workforce">Workforce</a>
       <a class="nav-item nav-link" href="#d">Contact</a>
     </div>
   </div>

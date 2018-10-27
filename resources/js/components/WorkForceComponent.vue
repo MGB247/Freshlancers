@@ -16,21 +16,60 @@
             <div class="activeHexBottom"></div>
             </div>
             </div>
-            <div class="memberInfo">
-            <p>awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd</p>
+            <div class="memberInfo animated">
+            <h2>{{activeMember.name}}</h2>
+            <p>{{activeMember.info}}</p>
             </div>
         </div>
+    <scroll-component id="sc" linkto="#" down="1"></scroll-component>
 </div>
 </template>
 
 <script>
+import ScrollComponent from "./ScrollComponent.vue";
 export default {
   data: function() {
     return {
-      activeHexID: 1
+      activeHexID: Math.ceil((Math.random() * 10) % 6),
+      activeMember: [{}],
+      members: [
+        {
+          name: "Syed Hameez Rehman",
+          info:
+            "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+        },
+        {
+          name: "Muhammad Ghayas Baig",
+          info:
+            "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+        },
+        {
+          name: "Raafe Bin Asad",
+          info:
+            "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+        },
+        {
+          name: "Abdullah Sherazi",
+          info:
+            "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+        },
+        {
+          name: "Ehsan Shafique",
+          info:
+            "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+        },
+        {
+          name: "Syed Asad Haider Rizvi",
+          info:
+            "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+        }
+      ]
     };
   },
   props: ["heading"],
+  components: {
+    ScrollComponent
+  },
   methods: {
     initializeListeners: function() {
       var hexagons = document.getElementsByClassName("hexagon");
@@ -39,12 +78,42 @@ export default {
       }
     },
     setActive: function(hexagon) {
-      var clickedHexID = hexagon.target.getAttribute("id");
-      this.activeHexID = clickedHexID[clickedHexID.length - 1];
+      //Start Fading Out
+      document.getElementsByClassName("memberInfo")[0].classList.add("fadeOut");
+
+      //Set Timeout for FadeOut
+      setTimeout(
+        function() {
+          //Remove Fade Out
+          document
+            .getElementsByClassName("memberInfo")[0]
+            .classList.remove("fadeOut");
+
+          //Start Fading In
+          document
+            .getElementsByClassName("memberInfo")[0]
+            .classList.add("fadeIn");
+
+          //Change Data while fading In
+          var clickedHexID = hexagon.target.getAttribute("id");
+          this.activeHexID = clickedHexID[clickedHexID.length - 1];
+          this.activeMember = this.members[this.activeHexID - 1];
+
+          //Set Timeout for Fade In
+          setTimeout(function() {
+            //Remove Fade In
+            document
+              .getElementsByClassName("memberInfo")[0]
+              .classList.remove("fadeIn");
+          }, 250);
+        }.bind(this),
+        250
+      );
     }
   },
   mounted() {
     this.initializeListeners();
+    this.activeMember = this.members[this.activeHexID - 1];
   }
 };
 </script>
@@ -54,6 +123,11 @@ export default {
 h1 {
   text-align: center;
   font-size: 5vw;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3vw;
 }
 
 p {
@@ -74,13 +148,23 @@ p {
   width: 50%;
 }
 
-#hex1,
-#hex2,
-#hex3,
-#hex4,
-#hex5,
+#hex1 {
+  background-image: url("/images/p1.jpg");
+}
+#hex2 {
+  background-image: url("/images/p2.jpg");
+}
+#hex3 {
+  background-image: url("/images/p3.jpg");
+}
+#hex4 {
+  background-image: url("/images/p4.jpg");
+}
+#hex5 {
+  background-image: url("/images/p5.jpg");
+}
 #hex6 {
-  background-image: url(http://csshexagon.com/img/meow.jpg);
+  background-image: url("/images/p6.jpg");
 }
 .hexagon {
   position: relative;
@@ -156,6 +240,7 @@ p {
   margin: 101.04px 0;
   background-size: auto 404.1452px;
   background-position: center;
+  transition: 0.5s all;
 }
 
 .activeHexTop,
@@ -213,6 +298,11 @@ p {
   height: 202.0726px;
   z-index: 2;
   background: inherit;
+}
+
+#sc {
+  position: relative;
+  bottom: -8vw; /* Yet to know why */
 }
 
 @media screen and (max-width: 800px) {
