@@ -30,6 +30,12 @@
                 position: relative;
                 top: 110px; /* 110 is the current Navbar Height */
             }
+            .contains::before { /* Fix for correct scroll to content for anchors */
+                content: "";
+                display: block;
+                height: 140px; /* fixed header height*/
+                margin: -140px 0 0; /* negative fixed header height */
+}
         </style>
     </head>
     <body>
