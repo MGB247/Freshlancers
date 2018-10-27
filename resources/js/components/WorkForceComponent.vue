@@ -149,12 +149,11 @@ p {
 }
 
 .activeHexagon {
-  left: calc(50% - 250px);
+  left: calc(50% - 175px);
   position: relative;
   width: 350px;
   height: 202.07px;
   margin: 101.04px 0;
-  background-image: url(http://csshexagon.com/img/meow.jpg);
   background-size: auto 404.1452px;
   background-position: center;
 }
@@ -214,6 +213,12 @@ p {
   height: 202.0726px;
   z-index: 2;
   background: inherit;
+}
+
+@media screen and (max-width: 800px) {
+  .activeHex > div {
+    width: 100%;
+  }
 }
 </style>
 

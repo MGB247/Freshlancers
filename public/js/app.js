@@ -14349,7 +14349,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(16);
-module.exports = __webpack_require__(65);
+module.exports = __webpack_require__(66);
 
 
 /***/ }),
@@ -48326,9 +48326,9 @@ function injectStyle (ssrContext) {
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(69)
+var __vue_script__ = __webpack_require__(64)
 /* template */
-var __vue_template__ = __webpack_require__(64)
+var __vue_template__ = __webpack_require__(65)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -48401,13 +48401,69 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\nh1[data-v-48107bee] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\np[data-v-48107bee] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 2vw;\n}\n.hexagonsHolder[data-v-48107bee],\r\n.activeHex[data-v-48107bee] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\n.activeHex > div[data-v-48107bee] {\r\n  width: 50%;\n}\n#hex1[data-v-48107bee],\r\n#hex2[data-v-48107bee],\r\n#hex3[data-v-48107bee],\r\n#hex4[data-v-48107bee],\r\n#hex5[data-v-48107bee],\r\n#hex6[data-v-48107bee] {\r\n  background-image: url(http://csshexagon.com/img/meow.jpg);\n}\n.hexagon[data-v-48107bee] {\r\n  position: relative;\r\n  width: 150px;\r\n  height: 86.6px;\r\n  margin: 86.6px 20px;\r\n  background-size: auto 173.2051px;\r\n  background-position: center;\n}\n.hexTop[data-v-48107bee],\r\n.hexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 106.07px;\r\n  height: 106.07px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 21.97px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.hexTop[data-v-48107bee]:after,\r\n.hexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 150px;\r\n  height: 86.60254037844388px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.hexTop[data-v-48107bee] {\r\n  top: -53.033px;\n}\n.hexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.hexBottom[data-v-48107bee] {\r\n  bottom: -53.033px;\n}\n.hexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.hexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 150px;\r\n  height: 86.6025px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n.activeHexagon[data-v-48107bee] {\r\n  left: calc(50% - 250px);\r\n  position: relative;\r\n  width: 350px;\r\n  height: 202.07px;\r\n  margin: 101.04px 0;\r\n  background-image: url(http://csshexagon.com/img/meow.jpg);\r\n  background-size: auto 404.1452px;\r\n  background-position: center;\n}\n.activeHexTop[data-v-48107bee],\r\n.activeHexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 247.49px;\r\n  height: 247.49px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 51.26px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.activeHexTop[data-v-48107bee]:after,\r\n.activeHexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 350px;\r\n  height: 202.07259421636903px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.activeHexTop[data-v-48107bee] {\r\n  top: -123.7437px;\n}\n.activeHexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.activeHexBottom[data-v-48107bee] {\r\n  bottom: -123.7437px;\n}\n.activeHexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.activeHexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 350px;\r\n  height: 202.0726px;\r\n  z-index: 2;\r\n  background: inherit;\n}\r\n", ""]);
+exports.push([module.i, "\nh1[data-v-48107bee] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\np[data-v-48107bee] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 2vw;\n}\n.hexagonsHolder[data-v-48107bee],\r\n.activeHex[data-v-48107bee] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\n.activeHex > div[data-v-48107bee] {\r\n  width: 50%;\n}\n#hex1[data-v-48107bee],\r\n#hex2[data-v-48107bee],\r\n#hex3[data-v-48107bee],\r\n#hex4[data-v-48107bee],\r\n#hex5[data-v-48107bee],\r\n#hex6[data-v-48107bee] {\r\n  background-image: url(http://csshexagon.com/img/meow.jpg);\n}\n.hexagon[data-v-48107bee] {\r\n  position: relative;\r\n  width: 150px;\r\n  height: 86.6px;\r\n  margin: 86.6px 20px;\r\n  background-size: auto 173.2051px;\r\n  background-position: center;\n}\n.hexTop[data-v-48107bee],\r\n.hexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 106.07px;\r\n  height: 106.07px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 21.97px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.hexTop[data-v-48107bee]:after,\r\n.hexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 150px;\r\n  height: 86.60254037844388px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.hexTop[data-v-48107bee] {\r\n  top: -53.033px;\n}\n.hexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.hexBottom[data-v-48107bee] {\r\n  bottom: -53.033px;\n}\n.hexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.hexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 150px;\r\n  height: 86.6025px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n.activeHexagon[data-v-48107bee] {\r\n  left: calc(50% - 175px);\r\n  position: relative;\r\n  width: 350px;\r\n  height: 202.07px;\r\n  margin: 101.04px 0;\r\n  background-size: auto 404.1452px;\r\n  background-position: center;\n}\n.activeHexTop[data-v-48107bee],\r\n.activeHexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 247.49px;\r\n  height: 247.49px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 51.26px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.activeHexTop[data-v-48107bee]:after,\r\n.activeHexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 350px;\r\n  height: 202.07259421636903px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.activeHexTop[data-v-48107bee] {\r\n  top: -123.7437px;\n}\n.activeHexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.activeHexBottom[data-v-48107bee] {\r\n  bottom: -123.7437px;\n}\n.activeHexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.activeHexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 350px;\r\n  height: 202.0726px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n@media screen and (max-width: 800px) {\n.activeHex > div[data-v-48107bee] {\r\n    width: 100%;\n}\n}\r\n", ""]);
 
 // exports
 
 
 /***/ }),
 /* 64 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      activeHexID: 1
+    };
+  },
+  props: ["heading"],
+  methods: {
+    initializeListeners: function initializeListeners() {
+      var hexagons = document.getElementsByClassName("hexagon");
+      for (var i = 0; i < hexagons.length; i++) {
+        hexagons[i].addEventListener("click", this.setActive);
+      }
+    },
+    setActive: function setActive(hexagon) {
+      var clickedHexID = hexagon.target.getAttribute("id");
+      this.activeHexID = clickedHexID[clickedHexID.length - 1];
+    }
+  },
+  mounted: function mounted() {
+    this.initializeListeners();
+  }
+});
+
+/***/ }),
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -48477,69 +48533,10 @@ if (false) {
 }
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      activeHexID: 1
-    };
-  },
-  props: ["heading"],
-  methods: {
-    initializeListeners: function initializeListeners() {
-      var hexagons = document.getElementsByClassName("hexagon");
-      for (var i = 0; i < hexagons.length; i++) {
-        hexagons[i].addEventListener("click", this.setActive);
-      }
-    },
-    setActive: function setActive(hexagon) {
-      var clickedHexID = hexagon.target.getAttribute("id");
-      this.activeHexID = clickedHexID[clickedHexID.length - 1];
-    }
-  },
-  mounted: function mounted() {
-    this.initializeListeners();
-  }
-});
 
 /***/ })
 /******/ ]);
