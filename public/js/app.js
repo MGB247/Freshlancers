@@ -48491,6 +48491,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       window.addEventListener("resize", this.resizeBD);
     },
     setActive: function setActive(hexagon) {
+      var hex = hexagon.target;
+
+      //Set hexgon if childs are clicked
+      if (hexagon.target.getAttribute("class") == "hexTop" || hexagon.target.getAttribute("class") == "hexBottom") {
+        hex = hexagon.target.parentNode;
+      }
+
       var memberInfo = document.getElementsByClassName("memberInfo")[0];
 
       //Start Fading Out
@@ -48505,7 +48512,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         memberInfo.classList.add("fadeIn");
 
         //Change Data while fading In
-        var clickedHexID = hexagon.target.getAttribute("id");
+        var clickedHexID = hex.getAttribute("id");
         this.activeHexID = clickedHexID[clickedHexID.length - 1];
         this.activeMember = this.members[this.activeHexID - 1];
 
