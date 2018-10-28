@@ -14349,7 +14349,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(16);
-module.exports = __webpack_require__(78);
+module.exports = __webpack_require__(83);
 
 
 /***/ }),
@@ -48924,7 +48924,7 @@ var normalizeComponent = __webpack_require__(3)
 /* script */
 var __vue_script__ = __webpack_require__(76)
 /* template */
-var __vue_template__ = __webpack_require__(77)
+var __vue_template__ = __webpack_require__(82)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -49010,7 +49010,7 @@ exports.push([module.i, "\n.content[data-v-5f49fbb6] {\r\n  display: -webkit-box
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SlideShowComponent_vue__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SlideShowComponent_vue__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SlideShowComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__SlideShowComponent_vue__);
 //
 //
@@ -49041,8 +49041,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       works: [],
       activeWork: {},
-      showWork: 0,
-      display: "none"
+      showWork: 0
     };
   },
   components: {
@@ -49069,7 +49068,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
         this.activeWork = this.works[workI.getAttribute("id")];
         this.showWork = 1;
-        this.display = "block";
       }
     },
     fillWorks: function fillWorks() {
@@ -49095,6 +49093,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           backgroundImage: "url('/images/mcdb.png')"
         }
       });
+    },
+    close: function close() {
+      this.showWork = 0;
     }
   },
   mounted: function mounted() {
@@ -49107,84 +49108,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "contains", attrs: { id: "recentwork" } },
-    [
-      _c("h1", [_vm._v("\n        " + _vm._s(_vm.heading) + "\n    ")]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "content" },
-        _vm._l(_vm.works, function(work) {
-          return _c(
-            "div",
-            { key: work.id, staticClass: "work", attrs: { id: work.id } },
-            [
-              _c("div", { staticClass: "hexagon", style: work.thumb }, [
-                _c("div", { staticClass: "hexTop" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "hexBottom" })
-              ]),
-              _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(work.name))])
-            ]
-          )
-        })
-      ),
-      _vm._v(" "),
-      _vm.showWork
-        ? _c("slide-show-component", {
-            attrs: {
-              DDisplay: _vm.display,
-              heading: _vm.activeWork.name,
-              slides: _vm.activeWork.slides
-            }
-          })
-        : _vm._e(),
-      _vm._v(" "),
-      _c("scroll-component", { attrs: { linkto: "#", down: "1" } })
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-5f49fbb6", module.exports)
-  }
-}
-
-/***/ }),
-/* 78 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */
-/***/ (function(module, exports, __webpack_require__) {
-
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(83)
+  __webpack_require__(78)
 }
 var normalizeComponent = __webpack_require__(3)
 /* script */
-var __vue_script__ = __webpack_require__(85)
+var __vue_script__ = __webpack_require__(80)
 /* template */
-var __vue_template__ = __webpack_require__(86)
+var __vue_template__ = __webpack_require__(81)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -49223,13 +49156,13 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 83 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(84);
+var content = __webpack_require__(79);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -49249,7 +49182,7 @@ if(false) {
 }
 
 /***/ }),
-/* 84 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(1)(false);
@@ -49263,7 +49196,7 @@ exports.push([module.i, "\n#slideshow[data-v-f1cbdb0c] {\r\n  top: 0%;\r\n  left
 
 
 /***/ }),
-/* 85 */
+/* 80 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -49288,7 +49221,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       WHeight: 0
     };
   },
-  props: ["heading", "slides", "DDisplay"],
+  props: ["heading", "slides"],
   methods: {
     initialize: function initialize() {
       window.addEventListener("resize", this.setSize);
@@ -49298,7 +49231,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.WHeight = window.innerHeight;
     },
     close: function close() {
-      this.DDisplay = "none";
+      this.$emit("close");
     },
     previousSlide: function previousSlide() {
       if (this.activeSlideNo) {
@@ -49319,7 +49252,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 86 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -49330,11 +49263,7 @@ var render = function() {
     "div",
     {
       staticClass: "contains",
-      style: {
-        height: _vm.WHeight + "px",
-        width: _vm.WWidth + "px",
-        display: _vm.DDisplay
-      },
+      style: { height: _vm.WHeight + "px", width: _vm.WWidth + "px" },
       attrs: { id: "slideshow" }
     },
     [
@@ -49367,6 +49296,71 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-f1cbdb0c", module.exports)
   }
 }
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "contains", attrs: { id: "recentwork" } },
+    [
+      _c("h1", [_vm._v("\n        " + _vm._s(_vm.heading) + "\n    ")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "content" },
+        _vm._l(_vm.works, function(work) {
+          return _c(
+            "div",
+            { key: work.id, staticClass: "work", attrs: { id: work.id } },
+            [
+              _c("div", { staticClass: "hexagon", style: work.thumb }, [
+                _c("div", { staticClass: "hexTop" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "hexBottom" })
+              ]),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(work.name))])
+            ]
+          )
+        })
+      ),
+      _vm._v(" "),
+      _vm.showWork
+        ? _c("slide-show-component", {
+            attrs: {
+              heading: _vm.activeWork.name,
+              slides: _vm.activeWork.slides
+            },
+            on: { close: _vm.close }
+          })
+        : _vm._e(),
+      _vm._v(" "),
+      _c("scroll-component", { attrs: { linkto: "#", down: "1" } })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5f49fbb6", module.exports)
+  }
+}
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

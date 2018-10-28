@@ -12,7 +12,7 @@
                 <p>{{work.name}}</p>
             </div>
         </div>
-        <slide-show-component v-bind:DDisplay="display" v-if="showWork" v-bind:heading="activeWork.name" v-bind:slides="activeWork.slides"></slide-show-component>
+        <slide-show-component v-on:close="close" v-if="showWork" v-bind:heading="activeWork.name" v-bind:slides="activeWork.slides"></slide-show-component>
         <scroll-component linkto="#" down="1"></scroll-component>
     </div>
 </template>
@@ -27,8 +27,7 @@ export default {
     return {
       works: [],
       activeWork: {},
-      showWork: 0,
-      display: "none"
+      showWork: 0
     };
   },
   components: {
@@ -58,7 +57,6 @@ export default {
         }
         this.activeWork = this.works[workI.getAttribute("id")];
         this.showWork = 1;
-        this.display = "block";
       }
     },
     fillWorks: function() {
@@ -84,6 +82,9 @@ export default {
           backgroundImage: "url('/images/mcdb.png')"
         }
       });
+    },
+    close: function() {
+      this.showWork = 0;
     }
   },
   mounted() {

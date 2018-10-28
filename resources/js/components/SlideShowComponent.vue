@@ -1,5 +1,5 @@
 <template>
-    <div class="contains" id="slideshow" v-bind:style="{height: WHeight + 'px', width: WWidth + 'px', display: DDisplay}">
+    <div class="contains" id="slideshow" v-bind:style="{height: WHeight + 'px', width: WWidth + 'px'}">
         <img v-bind:src="activeSlide" alt="Image Not Available">
         <button id="closeBtn" v-on:click="close"> <i class="fas fa-times-circle"></i> </button>
         <button id="prevBtn" v-on:click="previousSlide"> <i class="fas fa-arrow-circle-left"></i> </button>
@@ -18,7 +18,7 @@ export default {
       WHeight: 0
     };
   },
-  props: ["heading", "slides", "DDisplay"],
+  props: ["heading", "slides"],
   methods: {
     initialize: function() {
       window.addEventListener("resize", this.setSize);
@@ -28,7 +28,7 @@ export default {
       this.WHeight = window.innerHeight;
     },
     close: function() {
-      this.DDisplay = "none";
+      this.$emit("close");
     },
     previousSlide: function() {
       if (this.activeSlideNo) {
