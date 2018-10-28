@@ -47804,6 +47804,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "navbar",
@@ -47932,6 +47933,15 @@ var staticRenderFns = [
             "a",
             { staticClass: "nav-item nav-link", attrs: { href: "#workforce" } },
             [_vm._v("Workforce")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "nav-item nav-link",
+              attrs: { href: "#recentwork" }
+            },
+            [_vm._v("Our Work")]
           ),
           _vm._v(" "),
           _c("a", { staticClass: "nav-item nav-link", attrs: { href: "#d" } }, [
@@ -48997,7 +49007,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.content[data-v-5f49fbb6] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\n.content > div > div[data-v-5f49fbb6] {\r\n  position: relative;\r\n  left: calc(50% - 95px);\n}\n.content > div > p[data-v-5f49fbb6] {\r\n  text-align: center;\n}\nh1[data-v-5f49fbb6] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\np[data-v-5f49fbb6] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 2vw;\n}\n.hexagon[data-v-5f49fbb6] {\r\n  position: relative;\r\n  width: 150px;\r\n  height: 86.6px;\r\n  margin: 86.6px 20px;\r\n  background-size: auto 173.2051px;\r\n  background-position: center;\r\n  cursor: pointer;\n}\n.hexTop[data-v-5f49fbb6],\r\n.hexBottom[data-v-5f49fbb6] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 106.07px;\r\n  height: 106.07px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 21.97px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.hexTop[data-v-5f49fbb6]:after,\r\n.hexBottom[data-v-5f49fbb6]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 150px;\r\n  height: 86.60254037844388px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.hexTop[data-v-5f49fbb6] {\r\n  top: -53.033px;\n}\n.hexTop[data-v-5f49fbb6]:after {\r\n  background-position: center top;\n}\n.hexBottom[data-v-5f49fbb6] {\r\n  bottom: -53.033px;\n}\n.hexBottom[data-v-5f49fbb6]:after {\r\n  background-position: center bottom;\n}\n.hexagon[data-v-5f49fbb6]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 150px;\r\n  height: 86.6025px;\r\n  z-index: 2;\r\n  background: inherit;\n}\r\n", ""]);
+exports.push([module.i, "\n.content[data-v-5f49fbb6] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\r\n  padding: 100px 0;\n}\n.content > div > div[data-v-5f49fbb6] {\r\n  position: relative;\r\n  left: calc(50% - 95px);\n}\n.content > div > p[data-v-5f49fbb6] {\r\n  text-align: center;\n}\nh1[data-v-5f49fbb6] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\np[data-v-5f49fbb6] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 2vw;\n}\n.hexagon[data-v-5f49fbb6] {\r\n  position: relative;\r\n  width: 150px;\r\n  height: 86.6px;\r\n  margin: 86.6px 20px;\r\n  background-size: auto 173.2051px;\r\n  background-position: center;\r\n  cursor: pointer;\n}\n.hexTop[data-v-5f49fbb6],\r\n.hexBottom[data-v-5f49fbb6] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 106.07px;\r\n  height: 106.07px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 21.97px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.hexTop[data-v-5f49fbb6]:after,\r\n.hexBottom[data-v-5f49fbb6]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 150px;\r\n  height: 86.60254037844388px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.hexTop[data-v-5f49fbb6] {\r\n  top: -53.033px;\n}\n.hexTop[data-v-5f49fbb6]:after {\r\n  background-position: center top;\n}\n.hexBottom[data-v-5f49fbb6] {\r\n  bottom: -53.033px;\n}\n.hexBottom[data-v-5f49fbb6]:after {\r\n  background-position: center bottom;\n}\n.hexagon[data-v-5f49fbb6]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 150px;\r\n  height: 86.6025px;\r\n  z-index: 2;\r\n  background: inherit;\n}\r\n", ""]);
 
 // exports
 
@@ -49077,21 +49087,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         thumb: {
           backgroundImage: "url('/images/mcdb.png')"
         },
-        slides: ["/images/mcdb.png", "/images/p5.jpg", "/images/p6.png"]
+        slides: ["/images/mcdb.png", "/images/p5.jpg", "/images/p6.jpg"]
       });
       this.works.push({
         id: this.works.length,
         name: "Spice House",
         thumb: {
-          backgroundImage: "url('/images/mcdb.png')"
-        }
+          backgroundImage: "url('/images/p1.jpg')"
+        },
+        slides: []
       });
       this.works.push({
         id: this.works.length,
         name: "Other",
         thumb: {
-          backgroundImage: "url('/images/mcdb.png')"
-        }
+          backgroundImage: "url('/images/p3.jpg')"
+        },
+        slides: []
       });
     },
     close: function close() {

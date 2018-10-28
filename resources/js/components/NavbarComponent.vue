@@ -12,6 +12,7 @@
       <a class="nav-item nav-link" href="#about">About</a>
       <a class="nav-item nav-link" href="#services">Services</a>
       <a class="nav-item nav-link" href="#workforce">Workforce</a>
+      <a class="nav-item nav-link" href="#recentwork">Our Work</a>
       <a class="nav-item nav-link" href="#d">Contact</a>
     </div>
   </div>

@@ -66,21 +66,23 @@ export default {
         thumb: {
           backgroundImage: "url('/images/mcdb.png')"
         },
-        slides: ["/images/mcdb.png", "/images/p5.jpg", "/images/p6.png"]
+        slides: ["/images/mcdb.png", "/images/p5.jpg", "/images/p6.jpg"]
       });
       this.works.push({
         id: this.works.length,
         name: "Spice House",
         thumb: {
-          backgroundImage: "url('/images/mcdb.png')"
-        }
+          backgroundImage: "url('/images/p1.jpg')"
+        },
+        slides: []
       });
       this.works.push({
         id: this.works.length,
         name: "Other",
         thumb: {
-          backgroundImage: "url('/images/mcdb.png')"
-        }
+          backgroundImage: "url('/images/p3.jpg')"
+        },
+        slides: []
       });
     },
     close: function() {
@@ -100,6 +102,7 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding: 100px 0;
 }
 
 .content > div > div {
