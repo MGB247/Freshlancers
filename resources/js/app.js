@@ -25,6 +25,10 @@ Vue.component(
     "service-component",
     require("./components/ServiceComponent.vue")
 );
+Vue.component(
+    "recent-work-component",
+    require("./components/RecentWorkComponent.vue")
+);
 
 const app = new Vue({
     el: "#app"

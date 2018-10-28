@@ -29,7 +29,7 @@
     
 </div>
 </div>
-<scroll-component linkto="#services" down="1"></scroll-component>
+<scroll-component linkto="#recentwork" down="1"></scroll-component>
 </div>
 </template>
 
@@ -56,7 +56,6 @@ export default {
       window.addEventListener("load", this.loader);
     },
     setActive: function(hexagon) {
-      console.log("CH");
       var hex = hexagon.target;
 
       //Set hexagon if childs are clicked
@@ -102,8 +101,7 @@ export default {
     loader: function() {
       //Assign events to hex's
       var hexagons = document.getElementsByClassName("hexagon");
-      for (var i = 0; i < 6; i++) {
-        console.log("PLS");
+      for (var i = 0; i < this.members.length; i++) {
         hexagons[i].addEventListener("click", this.setActive);
       }
 
