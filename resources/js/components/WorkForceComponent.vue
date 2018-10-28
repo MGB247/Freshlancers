@@ -145,7 +145,7 @@ export default {
   background-image: url("/images/code.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  filter: brightness(0.4) blur(2px);
+  filter: brightness(0.4);
   width: 100%;
   z-index: -1;
 }
