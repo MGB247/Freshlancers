@@ -10,7 +10,7 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="#about">About</a>
-      <a class="nav-item nav-link" href="#b">Services</a>
+      <a class="nav-item nav-link" href="#services">Services</a>
       <a class="nav-item nav-link" href="#workforce">Workforce</a>
       <a class="nav-item nav-link" href="#d">Contact</a>
     </div>
@@ -60,7 +60,7 @@ export default {
 <style scoped>
 .cust-nav {
   background-color: black;
-  border-bottom: 2px solid white;
+
   padding-top: unset;
   padding-bottom: unset;
   transition: 0.5s all;

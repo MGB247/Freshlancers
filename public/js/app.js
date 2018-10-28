@@ -14376,9 +14376,10 @@ Vue.component("navbar-component", __webpack_require__(43));
 Vue.component("image-component", __webpack_require__(49));
 Vue.component("about-component", __webpack_require__(56));
 Vue.component("work-force-component", __webpack_require__(61));
+Vue.component("service-component", __webpack_require__(70));
 
 var app = new Vue({
-  el: "#app"
+    el: "#app"
 });
 
 /***/ }),
@@ -47738,7 +47739,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n.cust-nav[data-v-485090b2] {\r\n  background-color: black;\r\n  border-bottom: 2px solid white;\r\n  padding-top: unset;\r\n  padding-bottom: unset;\r\n  -webkit-transition: 0.5s all;\r\n  transition: 0.5s all;\n}\n.filter[data-v-485090b2] {\r\n  -webkit-filter: opacity(0.85);\r\n          filter: opacity(0.85);\n}\n.navbar-brand[data-v-485090b2] {\r\n  font-size: 22px;\r\n  font-weight: bolder;\n}\n.navbar-brand img[data-v-485090b2] {\r\n  border-radius: 50%;\n}\n.nav-item[data-v-485090b2] {\r\n  font-size: 16px;\r\n  font-weight: bold;\n}\n.active[data-v-485090b2] {\r\n  color: white !important;\n}\r\n", ""]);
+exports.push([module.i, "\n.cust-nav[data-v-485090b2] {\r\n  background-color: black;\r\n\r\n  padding-top: unset;\r\n  padding-bottom: unset;\r\n  -webkit-transition: 0.5s all;\r\n  transition: 0.5s all;\n}\n.filter[data-v-485090b2] {\r\n  -webkit-filter: opacity(0.85);\r\n          filter: opacity(0.85);\n}\n.navbar-brand[data-v-485090b2] {\r\n  font-size: 22px;\r\n  font-weight: bolder;\n}\n.navbar-brand img[data-v-485090b2] {\r\n  border-radius: 50%;\n}\n.nav-item[data-v-485090b2] {\r\n  font-size: 16px;\r\n  font-weight: bold;\n}\n.active[data-v-485090b2] {\r\n  color: white !important;\n}\r\n", ""]);
 
 // exports
 
@@ -47920,9 +47921,11 @@ var staticRenderFns = [
             [_vm._v("About")]
           ),
           _vm._v(" "),
-          _c("a", { staticClass: "nav-item nav-link", attrs: { href: "#b" } }, [
-            _vm._v("Services")
-          ]),
+          _c(
+            "a",
+            { staticClass: "nav-item nav-link", attrs: { href: "#services" } },
+            [_vm._v("Services")]
+          ),
           _vm._v(" "),
           _c(
             "a",
@@ -47952,17 +47955,21 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(78)
+}
 var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(50)
 /* template */
-var __vue_template__ = __webpack_require__(55)
+var __vue_template__ = __webpack_require__(80)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-702c940d"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -48002,6 +48009,7 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__);
+//
 //
 //
 //
@@ -48054,7 +48062,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\na[data-v-ce783dd6],\r\na[data-v-ce783dd6]:hover {\r\n  color: unset;\n}\ni[data-v-ce783dd6] {\r\n  position: relative;\r\n  bottom: 4vw;\r\n  left: calc(50% - 1.5vw);\r\n  font-size: 3vw;\n}\r\n", ""]);
+exports.push([module.i, "\na[data-v-ce783dd6],\r\na[data-v-ce783dd6]:hover {\r\n  color: unset;\r\n  text-decoration: none;\r\n  width: 100%;\n}\ni[data-v-ce783dd6] {\r\n  position: relative;\r\n  bottom: 0%;\r\n  left: calc(50% - 1.5vw);\r\n  font-size: 3vw;\r\n  margin-bottom: 3vw;\r\n  margin-top: 3vw;\r\n  color: black;\n}\r\n", ""]);
 
 // exports
 
@@ -48074,7 +48082,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["linkto", "up", "down"]
+  props: ["linkto", "up", "down", "color"]
 });
 
 /***/ }),
@@ -48088,10 +48096,18 @@ var render = function() {
   return _vm.linkto
     ? _c("a", { attrs: { href: _vm.linkto } }, [
         _vm.down
-          ? _c("i", { staticClass: "fas fa-chevron-circle-down" })
+          ? _c("i", {
+              staticClass: "fas fa-chevron-circle-down",
+              style: { color: _vm.color }
+            })
           : _vm._e(),
         _vm._v(" "),
-        _vm.up ? _c("i", { staticClass: "fas fa-chevron-circle-up" }) : _vm._e()
+        _vm.up
+          ? _c("i", {
+              staticClass: "fas fa-chevron-circle-up",
+              style: { color: _vm.color }
+            })
+          : _vm._e()
       ])
     : _vm._e()
 }
@@ -48106,42 +48122,7 @@ if (false) {
 }
 
 /***/ }),
-/* 55 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "image-holder contains", attrs: { id: "image-holder" } },
-    [
-      _c("img", {
-        attrs: {
-          src: _vm.image.src,
-          alt: _vm.image.alt,
-          height: _vm.image.height,
-          width: _vm.image.width
-        }
-      }),
-      _vm._v(" "),
-      _c("scroll-component", { attrs: { linkto: "#about", down: "1" } })
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-702c940d", module.exports)
-  }
-}
-
-/***/ }),
+/* 55 */,
 /* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -48227,7 +48208,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\nh1[data-v-5049bb1b] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\n.content[data-v-5049bb1b] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  width: 100%;\r\n  height: auto;\n}\n.paragraph[data-v-5049bb1b] {\r\n  padding: 30px;\r\n  font-size: 2vw;\r\n  font-style: italic;\n}\n.paragraph[data-v-5049bb1b],\r\n.image[data-v-5049bb1b] {\r\n  width: 50%;\r\n  text-align: center;\r\n  word-break: break-all;\n}\n.image img[data-v-5049bb1b] {\r\n  width: 80%;\r\n  height: 80%;\n}\n@media screen and (max-width: 800px) {\n.paragraph[data-v-5049bb1b],\r\n  .image[data-v-5049bb1b] {\r\n    width: 100%;\n}\n}\r\n", ""]);
+exports.push([module.i, "\nh1[data-v-5049bb1b] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\n.content[data-v-5049bb1b] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  width: 100%;\n}\n.paragraph[data-v-5049bb1b] {\r\n  padding: 30px;\r\n  font-size: 2vw;\r\n  font-style: italic;\r\n  word-break: break-all;\n}\n.paragraph[data-v-5049bb1b],\r\n.image[data-v-5049bb1b] {\r\n  width: 50%;\r\n  text-align: center;\n}\n.image img[data-v-5049bb1b] {\r\n  width: 80%;\r\n  position: relative;\n}\n@media screen and (max-width: 800px) {\n.paragraph[data-v-5049bb1b],\r\n  .image[data-v-5049bb1b] {\r\n    width: 100%;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -48283,7 +48264,9 @@ var render = function() {
       _vm._v(" "),
       _vm._m(0),
       _vm._v(" "),
-      _c("scroll-component", { attrs: { linkto: "#workforce", down: "1" } })
+      _c("scroll-component", {
+        attrs: { id: "sc", linkto: "#services", down: "1" }
+      })
     ],
     1
   )
@@ -48403,7 +48386,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n#backdrop[data-v-48107bee] {\r\n  position: absolute;\r\n  background-image: url(\"/images/code.jpg\");\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n  -webkit-filter: brightness(0.4);\r\n          filter: brightness(0.4);\r\n  width: 100%;\r\n  z-index: -1;\n}\n#content-wf[data-v-48107bee] {\r\n  z-index: 1;\r\n  color: white;\n}\nh1[data-v-48107bee] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\nh2[data-v-48107bee] {\r\n  text-align: center;\r\n  font-size: 3vw;\n}\np[data-v-48107bee] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 2vw;\n}\n.hexagonsHolder[data-v-48107bee],\r\n.activeHex[data-v-48107bee] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\n.activeHex > div[data-v-48107bee] {\r\n  width: 50%;\n}\n#hex1[data-v-48107bee] {\r\n  background-image: url(\"/images/p1.jpg\");\n}\n#hex2[data-v-48107bee] {\r\n  background-image: url(\"/images/p2.jpg\");\n}\n#hex3[data-v-48107bee] {\r\n  background-image: url(\"/images/p3.jpg\");\n}\n#hex4[data-v-48107bee] {\r\n  background-image: url(\"/images/p4.jpg\");\n}\n#hex5[data-v-48107bee] {\r\n  background-image: url(\"/images/p5.jpg\");\n}\n#hex6[data-v-48107bee] {\r\n  background-image: url(\"/images/p6.jpg\");\n}\n.hexagon[data-v-48107bee] {\r\n  position: relative;\r\n  width: 150px;\r\n  height: 86.6px;\r\n  margin: 86.6px 20px;\r\n  background-size: auto 173.2051px;\r\n  background-position: center;\r\n  cursor: pointer;\n}\n.hexTop[data-v-48107bee],\r\n.hexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 106.07px;\r\n  height: 106.07px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 21.97px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.hexTop[data-v-48107bee]:after,\r\n.hexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 150px;\r\n  height: 86.60254037844388px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.hexTop[data-v-48107bee] {\r\n  top: -53.033px;\n}\n.hexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.hexBottom[data-v-48107bee] {\r\n  bottom: -53.033px;\n}\n.hexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.hexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 150px;\r\n  height: 86.6025px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n.activeHexagon[data-v-48107bee] {\r\n  left: calc(50% - 175px);\r\n  position: relative;\r\n  width: 350px;\r\n  height: 202.07px;\r\n  margin: 101.04px 0;\r\n  background-size: auto 404.1452px;\r\n  background-position: center;\r\n  -webkit-transition: 0.5s all;\r\n  transition: 0.5s all;\n}\n.activeHexTop[data-v-48107bee],\r\n.activeHexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 247.49px;\r\n  height: 247.49px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 51.26px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.activeHexTop[data-v-48107bee]:after,\r\n.activeHexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 350px;\r\n  height: 202.07259421636903px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.activeHexTop[data-v-48107bee] {\r\n  top: -123.7437px;\n}\n.activeHexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.activeHexBottom[data-v-48107bee] {\r\n  bottom: -123.7437px;\n}\n.activeHexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.activeHexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 350px;\r\n  height: 202.0726px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n#sc[data-v-48107bee] {\r\n  position: relative;\r\n  bottom: -8vw; /* Yet to know why */\n}\n@media screen and (max-width: 800px) {\n.activeHex[data-v-48107bee] {\r\n    margin: 30px 0 0 0;\n}\n.activeHex > div[data-v-48107bee] {\r\n    width: 100%;\r\n    padding: 20px 0 20px 0;\n}\n}\r\n", ""]);
+exports.push([module.i, "\n#backdrop[data-v-48107bee] {\r\n  position: absolute;\r\n  background-image: url(\"/images/code.jpg\");\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n  -webkit-filter: brightness(0.4);\r\n          filter: brightness(0.4);\r\n  width: 100%;\r\n  z-index: -1;\n}\n.content[data-v-48107bee] {\r\n  z-index: 1;\r\n  color: white;\n}\nh1[data-v-48107bee] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\nh2[data-v-48107bee] {\r\n  text-align: center;\r\n  font-size: 3vw;\n}\np[data-v-48107bee] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 2vw;\n}\n.hexagonsHolder[data-v-48107bee],\r\n.activeHex[data-v-48107bee] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\n.activeHex > div[data-v-48107bee] {\r\n  width: 50%;\n}\n#hex0[data-v-48107bee] {\r\n  background-image: url(\"/images/p1.jpg\");\n}\n#hex1[data-v-48107bee] {\r\n  background-image: url(\"/images/p2.jpg\");\n}\n#hex2[data-v-48107bee] {\r\n  background-image: url(\"/images/p3.jpg\");\n}\n#hex3[data-v-48107bee] {\r\n  background-image: url(\"/images/p4.jpg\");\n}\n#hex4[data-v-48107bee] {\r\n  background-image: url(\"/images/p5.jpg\");\n}\n#hex5[data-v-48107bee] {\r\n  background-image: url(\"/images/p6.jpg\");\n}\n.hexagon[data-v-48107bee] {\r\n  position: relative;\r\n  width: 150px;\r\n  height: 86.6px;\r\n  margin: 86.6px 20px;\r\n  background-size: auto 173.2051px;\r\n  background-position: center;\r\n  cursor: pointer;\n}\n.hexTop[data-v-48107bee],\r\n.hexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 106.07px;\r\n  height: 106.07px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 21.97px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.hexTop[data-v-48107bee]:after,\r\n.hexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 150px;\r\n  height: 86.60254037844388px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.hexTop[data-v-48107bee] {\r\n  top: -53.033px;\n}\n.hexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.hexBottom[data-v-48107bee] {\r\n  bottom: -53.033px;\n}\n.hexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.hexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 150px;\r\n  height: 86.6025px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n.activeHexagon[data-v-48107bee] {\r\n  left: calc(50% - 175px);\r\n  position: relative;\r\n  width: 350px;\r\n  height: 202.07px;\r\n  margin: 101.04px 0;\r\n  background-size: auto 404.1452px;\r\n  background-position: center;\r\n  -webkit-transition: 0.5s all;\r\n  transition: 0.5s all;\n}\n.activeHexTop[data-v-48107bee],\r\n.activeHexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 247.49px;\r\n  height: 247.49px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 51.26px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.activeHexTop[data-v-48107bee]:after,\r\n.activeHexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 350px;\r\n  height: 202.07259421636903px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.activeHexTop[data-v-48107bee] {\r\n  top: -123.7437px;\n}\n.activeHexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.activeHexBottom[data-v-48107bee] {\r\n  bottom: -123.7437px;\n}\n.activeHexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.activeHexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 350px;\r\n  height: 202.0726px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n@media screen and (max-width: 800px) {\n.activeHex[data-v-48107bee] {\r\n    margin: 30px 0 0 0;\n}\n.activeHex > div[data-v-48107bee] {\r\n    width: 100%;\r\n    padding: 20px 0 20px 0;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -48448,33 +48431,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      activeHexID: Math.ceil(Math.random() * 10 % 6),
-      activeMember: [{}],
+      activeHexID: 0,
+      activeMember: {},
       bdHeight: 0,
-      members: [{
-        name: "Syed Hameez Rehman",
-        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
-      }, {
-        name: "Muhammad Ghayas Baig",
-        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
-      }, {
-        name: "Raafe Bin Asad",
-        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
-      }, {
-        name: "Abdullah Sherazi",
-        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
-      }, {
-        name: "Ehsan Shafique",
-        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
-      }, {
-        name: "Syed Asad Haider Rizvi",
-        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
-      }]
+      members: []
     };
   },
   props: ["heading"],
@@ -48482,18 +48450,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     ScrollComponent: __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue___default.a
   },
   methods: {
-    initializeListeners: function initializeListeners() {
-      var hexagons = document.getElementsByClassName("hexagon");
-      for (var i = 0; i < hexagons.length; i++) {
-        hexagons[i].addEventListener("click", this.setActive);
-      }
-
+    initialize: function initialize() {
       window.addEventListener("resize", this.resizeBD);
+
+      //Things to be dont after loading the doc (like event assigning)
+      window.addEventListener("load", this.loader);
     },
     setActive: function setActive(hexagon) {
+      console.log("CH");
       var hex = hexagon.target;
 
-      //Set hexgon if childs are clicked
+      //Set hexagon if childs are clicked
       if (hexagon.target.getAttribute("class") == "hexTop" || hexagon.target.getAttribute("class") == "hexBottom") {
         hex = hexagon.target.parentNode;
       }
@@ -48514,7 +48481,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         //Change Data while fading In
         var clickedHexID = hex.getAttribute("id");
         this.activeHexID = clickedHexID[clickedHexID.length - 1];
-        this.activeMember = this.members[this.activeHexID - 1];
+        this.activeMember = this.members[this.activeHexID];
 
         //Set Timeout for Fade In
         setTimeout(function () {
@@ -48525,14 +48492,60 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     resizeBD: function resizeBD() {
       //Set backdrop div size
-      this.bdHeight = document.getElementById("content-wf").clientHeight + 200; //322 is anchor fix height + paddings/margins
+      this.bdHeight = document.getElementById("workforceInner").clientHeight;
+    },
+    loader: function loader() {
+      //Assign events to hex's
+      var hexagons = document.getElementsByClassName("hexagon");
+      for (var i = 0; i < 6; i++) {
+        console.log("PLS");
+        hexagons[i].addEventListener("click", this.setActive);
+      }
+
+      //Set backdrop div size
+      this.bdHeight = document.getElementById("workforceInner").clientHeight;
+    },
+    fillMembers: function fillMembers() {
+      this.members.push({
+        id: this.members.length,
+        name: "Syed Hameez Rehman",
+        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      });
+      this.members.push({
+        id: this.members.length,
+        name: "Muhammad Ghayas Baig",
+        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      });
+      this.members.push({
+        id: this.members.length,
+        name: "Raafe Bin Asad",
+        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      });
+      this.members.push({
+        id: this.members.length,
+        name: "Abdullah Sherazi",
+        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      });
+      this.members.push({
+        id: this.members.length,
+        name: "Ehsan Shafique",
+        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      });
+      this.members.push({
+        id: this.members.length,
+        name: "Syed Asad Haider Rizvi",
+        info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      });
     }
   },
   mounted: function mounted() {
-    this.initializeListeners();
-    this.activeMember = this.members[this.activeHexID - 1];
+    //Fill members Array
+    //Array must be filled first to allow assignment of events and other related data
 
-    this.bdHeight = document.getElementById("content-wf").clientHeight + 200; //322 is anchor fix height + paddings/margins
+    this.fillMembers();
+    this.activeHexID = Math.floor(Math.random() * 10 % this.members.length);
+    this.activeMember = this.members[this.activeHexID];
+    this.initialize();
   }
 });
 
@@ -48544,62 +48557,68 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "contains", attrs: { id: "workforce" } }, [
-    _c("div", {
-      style: { height: _vm.bdHeight + "px" },
-      attrs: { id: "backdrop" }
-    }),
-    _vm._v(" "),
-    _c(
-      "div",
-      { attrs: { id: "content-wf" } },
-      [
-        _c("h1", [_vm._v("\r\n        " + _vm._s(_vm.heading) + "\r\n    ")]),
+  return _c(
+    "div",
+    { staticClass: "contains ", attrs: { id: "workforce" } },
+    [
+      _c("div", { attrs: { id: "workforceInner" } }, [
+        _c("div", {
+          style: { height: _vm.bdHeight + "px" },
+          attrs: { id: "backdrop" }
+        }),
         _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "hexagonsHolder" },
-          _vm._l(6, function(n) {
-            return _c(
-              "div",
-              { key: n, staticClass: "hexagon", attrs: { id: "hex" + n } },
-              [
-                _c("div", { staticClass: "hexTop" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "hexBottom" })
-              ]
-            )
-          })
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "activeHex" }, [
-          _c("div", { staticClass: "hexagonHolder" }, [
-            _c(
-              "div",
-              {
-                staticClass: "activeHexagon",
-                attrs: { id: "hex" + _vm.activeHexID }
-              },
-              [
-                _c("div", { staticClass: "activeHexTop" }),
-                _vm._v(" "),
-                _c("div", { staticClass: "activeHexBottom" })
-              ]
-            )
-          ]),
+        _c("div", { staticClass: "content" }, [
+          _c("h1", [_vm._v("\r\n        " + _vm._s(_vm.heading) + "\r\n    ")]),
           _vm._v(" "),
-          _c("div", { staticClass: "memberInfo animated" }, [
-            _c("h2", [_vm._v(_vm._s(_vm.activeMember.name))]),
+          _c(
+            "div",
+            { staticClass: "hexagonsHolder" },
+            _vm._l(_vm.members, function(member) {
+              return _c(
+                "div",
+                {
+                  key: member.id,
+                  staticClass: "hexagon",
+                  attrs: { id: "hex" + member.id }
+                },
+                [
+                  _c("div", { staticClass: "hexTop" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "hexBottom" })
+                ]
+              )
+            })
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "activeHex" }, [
+            _c("div", { staticClass: "hexagonHolder" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "activeHexagon",
+                  attrs: { id: "hex" + _vm.activeHexID }
+                },
+                [
+                  _c("div", { staticClass: "activeHexTop" }),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "activeHexBottom" })
+                ]
+              )
+            ]),
             _vm._v(" "),
-            _c("p", [_vm._v(_vm._s(_vm.activeMember.info))])
+            _c("div", { staticClass: "memberInfo animated" }, [
+              _c("h2", [_vm._v(_vm._s(_vm.activeMember.name))]),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(_vm.activeMember.info))])
+            ])
           ])
-        ]),
-        _vm._v(" "),
-        _c("scroll-component", { attrs: { id: "sc", linkto: "#", down: "1" } })
-      ],
-      1
-    )
-  ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("scroll-component", { attrs: { linkto: "#services", down: "1" } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -48616,6 +48635,295 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 67 */,
+/* 68 */,
+/* 69 */,
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(71)
+}
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(73)
+/* template */
+var __vue_template__ = __webpack_require__(74)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-20c7a033"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/ServiceComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-20c7a033", Component.options)
+  } else {
+    hotAPI.reload("data-v-20c7a033", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(72);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("068a8ef2", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-20c7a033\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ServiceComponent.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-20c7a033\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ServiceComponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\nh1[data-v-20c7a033] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\np[data-v-20c7a033] {\r\n  word-break: break-all;\r\n  font-size: 1vw;\n}\n.content[data-v-20c7a033] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-pack: start;\r\n      -ms-flex-pack: start;\r\n          justify-content: flex-start;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  width: 100%;\r\n  margin: 100px auto;\n}\n.content > div[data-v-20c7a033] {\r\n  width: 30%;\r\n  margin: 10px 1.66% 10px 1.66%;\r\n  text-align: center;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 73 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "service",
+  props: ["heading"],
+  data: function data() {
+    return {
+      services: Array()
+    };
+  },
+  components: {
+    ScrollComponent: __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue___default.a
+  },
+  methods: {
+    fillServices: function fillServices() {
+      this.services.push({
+        id: this.services.length,
+        name: "Responsive Design",
+        info: "Get You Know What!",
+        img: "/images/resp.png"
+      });
+      this.services.push({
+        id: this.services.length,
+        name: "Wordpress Themed",
+        info: "Get You Know What!",
+        img: "/images/wp.png"
+      });
+      this.services.push({
+        id: this.services.length,
+        name: "Laravel Based Website",
+        info: "Get You Know What!",
+        img: "/images/lara.png"
+      });
+      this.services.push({
+        id: this.services.length,
+        name: "Games BOI!!",
+        info: "Get You Know What!",
+        img: "/images/games.png"
+      });
+    }
+  },
+  mounted: function mounted() {
+    //Fill Services Array
+
+    this.fillServices();
+  }
+});
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "contains", attrs: { id: "services" } },
+    [
+      _c("h1", [_vm._v("\n        " + _vm._s(_vm.heading) + "\n    ")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "content" },
+        _vm._l(_vm.services, function(service) {
+          return _c("div", { key: service.id }, [
+            _c("img", { attrs: { src: service.img, alt: service.name } }),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(service.info))])
+          ])
+        })
+      ),
+      _vm._v(" "),
+      _c("scroll-component", {
+        attrs: { id: "sc", linkto: "#workforce", down: "1" }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-20c7a033", module.exports)
+  }
+}
+
+/***/ }),
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(79);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("096a692f", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-702c940d\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ImageComponent.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-702c940d\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ImageComponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n#image-holder[data-v-702c940d] {\r\n  width: 100%;\r\n  height: auto;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { attrs: { id: "image-holder" } },
+    [
+      _c("div", { staticClass: "image-holder contains" }, [
+        _c("img", {
+          attrs: {
+            src: _vm.image.src,
+            alt: _vm.image.alt,
+            height: _vm.image.height,
+            width: _vm.image.width
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("scroll-component", { attrs: { linkto: "#about", down: "1" } })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-702c940d", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

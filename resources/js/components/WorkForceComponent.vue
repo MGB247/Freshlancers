@@ -1,14 +1,15 @@
 <template>
-<div class="contains" id="workforce">
+<div id="workforce" class="contains "> 
+<div id="workforceInner">
   <div  v-bind:style="{height: bdHeight + 'px'}"  id="backdrop">
 
   </div>
-<div id="content-wf">
+<div class="content">
     <h1>
         {{heading}}
     </h1>
         <div class="hexagonsHolder">
-            <div v-for="n in 6" v-bind:id="'hex' + n" class="hexagon" :key="n">
+            <div v-for="member in members" v-bind:id="'hex' + member.id" class="hexagon" :key="member.id">
             <div class="hexTop"></div>
             <div class="hexBottom"></div>
         </div>
@@ -25,8 +26,10 @@
             <p>{{activeMember.info}}</p>
             </div>
         </div>
-    <scroll-component id="sc" linkto="#" down="1"></scroll-component>
+    
 </div>
+</div>
+<scroll-component linkto="#services" down="1"></scroll-component>
 </div>
 </template>
 
@@ -35,41 +38,10 @@ import ScrollComponent from "./ScrollComponent.vue";
 export default {
   data: function() {
     return {
-      activeHexID: Math.ceil((Math.random() * 10) % 6),
-      activeMember: [{}],
+      activeHexID: 0,
+      activeMember: {},
       bdHeight: 0,
-      members: [
-        {
-          name: "Syed Hameez Rehman",
-          info:
-            "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
-        },
-        {
-          name: "Muhammad Ghayas Baig",
-          info:
-            "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
-        },
-        {
-          name: "Raafe Bin Asad",
-          info:
-            "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
-        },
-        {
-          name: "Abdullah Sherazi",
-          info:
-            "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
-        },
-        {
-          name: "Ehsan Shafique",
-          info:
-            "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
-        },
-        {
-          name: "Syed Asad Haider Rizvi",
-          info:
-            "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
-        }
-      ]
+      members: []
     };
   },
   props: ["heading"],
@@ -77,18 +49,17 @@ export default {
     ScrollComponent
   },
   methods: {
-    initializeListeners: function() {
-      var hexagons = document.getElementsByClassName("hexagon");
-      for (var i = 0; i < hexagons.length; i++) {
-        hexagons[i].addEventListener("click", this.setActive);
-      }
-
+    initialize: function() {
       window.addEventListener("resize", this.resizeBD);
+
+      //Things to be dont after loading the doc (like event assigning)
+      window.addEventListener("load", this.loader);
     },
     setActive: function(hexagon) {
+      console.log("CH");
       var hex = hexagon.target;
 
-      //Set hexgon if childs are clicked
+      //Set hexagon if childs are clicked
       if (
         hexagon.target.getAttribute("class") == "hexTop" ||
         hexagon.target.getAttribute("class") == "hexBottom"
@@ -113,7 +84,7 @@ export default {
           //Change Data while fading In
           var clickedHexID = hex.getAttribute("id");
           this.activeHexID = clickedHexID[clickedHexID.length - 1];
-          this.activeMember = this.members[this.activeHexID - 1];
+          this.activeMember = this.members[this.activeHexID];
 
           //Set Timeout for Fade In
           setTimeout(function() {
@@ -126,14 +97,66 @@ export default {
     },
     resizeBD: function() {
       //Set backdrop div size
-      this.bdHeight = document.getElementById("content-wf").clientHeight + 200; //322 is anchor fix height + paddings/margins
+      this.bdHeight = document.getElementById("workforceInner").clientHeight;
+    },
+    loader: function() {
+      //Assign events to hex's
+      var hexagons = document.getElementsByClassName("hexagon");
+      for (var i = 0; i < 6; i++) {
+        console.log("PLS");
+        hexagons[i].addEventListener("click", this.setActive);
+      }
+
+      //Set backdrop div size
+      this.bdHeight = document.getElementById("workforceInner").clientHeight;
+    },
+    fillMembers: function() {
+      this.members.push({
+        id: this.members.length,
+        name: "Syed Hameez Rehman",
+        info:
+          "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      });
+      this.members.push({
+        id: this.members.length,
+        name: "Muhammad Ghayas Baig",
+        info:
+          "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      });
+      this.members.push({
+        id: this.members.length,
+        name: "Raafe Bin Asad",
+        info:
+          "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      });
+      this.members.push({
+        id: this.members.length,
+        name: "Abdullah Sherazi",
+        info:
+          "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      });
+      this.members.push({
+        id: this.members.length,
+        name: "Ehsan Shafique",
+        info:
+          "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      });
+      this.members.push({
+        id: this.members.length,
+        name: "Syed Asad Haider Rizvi",
+        info:
+          "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+      });
     }
   },
   mounted() {
-    this.initializeListeners();
-    this.activeMember = this.members[this.activeHexID - 1];
+    //Fill members Array
+    //Array must be filled first to allow assignment of events and other related data
 
-    this.bdHeight = document.getElementById("content-wf").clientHeight + 200; //322 is anchor fix height + paddings/margins
+    this.fillMembers();
+    this.activeHexID = Math.floor((Math.random() * 10) % this.members.length);
+    this.activeMember = this.members[this.activeHexID];
+    this.initialize();
   }
 };
 </script>
@@ -150,7 +173,7 @@ export default {
   z-index: -1;
 }
 
-#content-wf {
+.content {
   z-index: 1;
   color: white;
 }
@@ -183,22 +206,22 @@ p {
   width: 50%;
 }
 
-#hex1 {
+#hex0 {
   background-image: url("/images/p1.jpg");
 }
-#hex2 {
+#hex1 {
   background-image: url("/images/p2.jpg");
 }
-#hex3 {
+#hex2 {
   background-image: url("/images/p3.jpg");
 }
-#hex4 {
+#hex3 {
   background-image: url("/images/p4.jpg");
 }
-#hex5 {
+#hex4 {
   background-image: url("/images/p5.jpg");
 }
-#hex6 {
+#hex5 {
   background-image: url("/images/p6.jpg");
 }
 .hexagon {
@@ -334,11 +357,6 @@ p {
   height: 202.0726px;
   z-index: 2;
   background: inherit;
-}
-
-#sc {
-  position: relative;
-  bottom: -8vw; /* Yet to know why */
 }
 
 @media screen and (max-width: 800px) {

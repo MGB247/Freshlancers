@@ -26,7 +26,6 @@
             .contains{
                 width: 100%;
                 height: auto;
-                margin-bottom: 30px;
             }
             .m-content{
                 position: relative;
@@ -46,6 +45,7 @@
             <div class="m-content">
             <image-component :image="{src: '/images/ho.jpg', alt: 'Image', height: '100%', width: '100%'}"></image-component>
             <about-component heading="About Us"></about-component>
+            <service-component heading="What We Do"></service-component>
             <work-force-component heading="Workforce"></work-force-component>
             </div>
         </div>

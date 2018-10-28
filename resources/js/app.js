@@ -21,6 +21,10 @@ Vue.component(
     "work-force-component",
     require("./components/WorkForceComponent.vue")
 );
+Vue.component(
+    "service-component",
+    require("./components/ServiceComponent.vue")
+);
 
 const app = new Vue({
     el: "#app"

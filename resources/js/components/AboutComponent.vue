@@ -1,5 +1,5 @@
 <template>
-    <div class="contains" id="about">
+    <div id="about" class="contains" >
         <h1>
             {{heading}}
         </h1>
@@ -11,7 +11,7 @@
                 <img src="/images/abt.png" alt="About Us">
             </div>
         </div>
-        <scroll-component linkto="#workforce" down="1"></scroll-component>
+        <scroll-component id="sc" linkto="#services" down="1"></scroll-component>
     </div>
 </template>
 
@@ -38,25 +38,24 @@ h1 {
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  height: auto;
 }
 
 .paragraph {
   padding: 30px;
   font-size: 2vw;
   font-style: italic;
+  word-break: break-all;
 }
 
 .paragraph,
 .image {
   width: 50%;
   text-align: center;
-  word-break: break-all;
 }
 
 .image img {
   width: 80%;
-  height: 80%;
+  position: relative;
 }
 
 @media screen and (max-width: 800px) {
