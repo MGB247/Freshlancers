@@ -135,8 +135,7 @@ export default {
   background-image: url("/images/code.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  color: rgb(255, 255, 255);
-  filter: brightness(0.5);
+  filter: brightness(0.4) blur(2px);
   width: 100%;
   z-index: -1;
 }
@@ -199,6 +198,7 @@ p {
   margin: 86.6px 20px;
   background-size: auto 173.2051px;
   background-position: center;
+  cursor: pointer;
 }
 
 .hexTop,
