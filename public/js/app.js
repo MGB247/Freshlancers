@@ -70,7 +70,7 @@
 "use strict";
 
 
-var bind = __webpack_require__(8);
+var bind = __webpack_require__(9);
 var isBuffer = __webpack_require__(23);
 
 /*global toString:true*/
@@ -843,10 +843,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(10);
+    adapter = __webpack_require__(11);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(10);
+    adapter = __webpack_require__(11);
   }
   return adapter;
 }
@@ -921,10 +921,61 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
 
 /***/ }),
 /* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(51)
+}
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(53)
+/* template */
+var __vue_template__ = __webpack_require__(54)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-ce783dd6"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/ScrollComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-ce783dd6", Component.options)
+  } else {
+    hotAPI.reload("data-v-ce783dd6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3465,7 +3516,7 @@ Popper.Defaults = Defaults;
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -13836,7 +13887,7 @@ return jQuery;
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13854,7 +13905,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -14044,7 +14095,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14055,7 +14106,7 @@ var settle = __webpack_require__(26);
 var buildURL = __webpack_require__(28);
 var parseHeaders = __webpack_require__(29);
 var isURLSameOrigin = __webpack_require__(30);
-var createError = __webpack_require__(11);
+var createError = __webpack_require__(12);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(31);
 
 module.exports = function xhrAdapter(config) {
@@ -14231,7 +14282,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14256,7 +14307,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14268,7 +14319,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14291,57 +14342,6 @@ Cancel.prototype.toString = function toString() {
 Cancel.prototype.__CANCEL__ = true;
 
 module.exports = Cancel;
-
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(51)
-}
-var normalizeComponent = __webpack_require__(2)
-/* script */
-var __vue_script__ = __webpack_require__(53)
-/* template */
-var __vue_template__ = __webpack_require__(54)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = "data-v-ce783dd6"
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/ScrollComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-ce783dd6", Component.options)
-  } else {
-    hotAPI.reload("data-v-ce783dd6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
 
 
 /***/ }),
@@ -14395,8 +14395,8 @@ window._ = __webpack_require__(18);
  */
 
 try {
-  window.Popper = __webpack_require__(6).default;
-  window.$ = window.jQuery = __webpack_require__(7);
+  window.Popper = __webpack_require__(7).default;
+  window.$ = window.jQuery = __webpack_require__(8);
 
   __webpack_require__(20);
 } catch (e) {}
@@ -31595,7 +31595,7 @@ module.exports = function(module) {
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-   true ? factory(exports, __webpack_require__(7), __webpack_require__(6)) :
+   true ? factory(exports, __webpack_require__(8), __webpack_require__(7)) :
   typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
   (factory((global.bootstrap = {}),global.jQuery,global.Popper));
 }(this, (function (exports,$,Popper) { 'use strict';
@@ -35549,7 +35549,7 @@ module.exports = __webpack_require__(22);
 
 
 var utils = __webpack_require__(0);
-var bind = __webpack_require__(8);
+var bind = __webpack_require__(9);
 var Axios = __webpack_require__(24);
 var defaults = __webpack_require__(5);
 
@@ -35584,9 +35584,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(13);
+axios.Cancel = __webpack_require__(14);
 axios.CancelToken = __webpack_require__(38);
-axios.isCancel = __webpack_require__(12);
+axios.isCancel = __webpack_require__(13);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -35739,7 +35739,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(11);
+var createError = __webpack_require__(12);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -36172,7 +36172,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(0);
 var transformData = __webpack_require__(35);
-var isCancel = __webpack_require__(12);
+var isCancel = __webpack_require__(13);
 var defaults = __webpack_require__(5);
 var isAbsoluteURL = __webpack_require__(36);
 var combineURLs = __webpack_require__(37);
@@ -36332,7 +36332,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(13);
+var Cancel = __webpack_require__(14);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -47650,7 +47650,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(9)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(10)))
 
 /***/ }),
 /* 43 */
@@ -48000,7 +48000,7 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__);
 //
 //
@@ -48238,7 +48238,7 @@ exports.push([module.i, "\nh1[data-v-5049bb1b] {\r\n  text-align: center;\r\n  f
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__);
 //
 //
@@ -48403,7 +48403,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\nh1[data-v-48107bee] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\nh2[data-v-48107bee] {\r\n  text-align: center;\r\n  font-size: 3vw;\n}\np[data-v-48107bee] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 2vw;\n}\n.hexagonsHolder[data-v-48107bee],\r\n.activeHex[data-v-48107bee] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\n.activeHex > div[data-v-48107bee] {\r\n  width: 50%;\n}\n#hex1[data-v-48107bee] {\r\n  background-image: url(\"/images/p1.jpg\");\n}\n#hex2[data-v-48107bee] {\r\n  background-image: url(\"/images/p2.jpg\");\n}\n#hex3[data-v-48107bee] {\r\n  background-image: url(\"/images/p3.jpg\");\n}\n#hex4[data-v-48107bee] {\r\n  background-image: url(\"/images/p4.jpg\");\n}\n#hex5[data-v-48107bee] {\r\n  background-image: url(\"/images/p5.jpg\");\n}\n#hex6[data-v-48107bee] {\r\n  background-image: url(\"/images/p6.jpg\");\n}\n.hexagon[data-v-48107bee] {\r\n  position: relative;\r\n  width: 150px;\r\n  height: 86.6px;\r\n  margin: 86.6px 20px;\r\n  background-size: auto 173.2051px;\r\n  background-position: center;\n}\n.hexTop[data-v-48107bee],\r\n.hexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 106.07px;\r\n  height: 106.07px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 21.97px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.hexTop[data-v-48107bee]:after,\r\n.hexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 150px;\r\n  height: 86.60254037844388px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.hexTop[data-v-48107bee] {\r\n  top: -53.033px;\n}\n.hexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.hexBottom[data-v-48107bee] {\r\n  bottom: -53.033px;\n}\n.hexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.hexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 150px;\r\n  height: 86.6025px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n.activeHexagon[data-v-48107bee] {\r\n  left: calc(50% - 175px);\r\n  position: relative;\r\n  width: 350px;\r\n  height: 202.07px;\r\n  margin: 101.04px 0;\r\n  background-size: auto 404.1452px;\r\n  background-position: center;\r\n  -webkit-transition: 0.5s all;\r\n  transition: 0.5s all;\n}\n.activeHexTop[data-v-48107bee],\r\n.activeHexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 247.49px;\r\n  height: 247.49px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 51.26px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.activeHexTop[data-v-48107bee]:after,\r\n.activeHexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 350px;\r\n  height: 202.07259421636903px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.activeHexTop[data-v-48107bee] {\r\n  top: -123.7437px;\n}\n.activeHexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.activeHexBottom[data-v-48107bee] {\r\n  bottom: -123.7437px;\n}\n.activeHexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.activeHexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 350px;\r\n  height: 202.0726px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n#sc[data-v-48107bee] {\r\n  position: relative;\r\n  bottom: -8vw; /* Yet to know why */\n}\n@media screen and (max-width: 800px) {\n.activeHex > div[data-v-48107bee] {\r\n    width: 100%;\n}\n}\r\n", ""]);
+exports.push([module.i, "\n#backdrop[data-v-48107bee] {\r\n  position: absolute;\r\n  background-image: url(\"/images/code.jpg\");\r\n  background-repeat: no-repeat;\r\n  background-size: cover;\r\n  color: rgb(255, 255, 255);\r\n  -webkit-filter: brightness(0.5);\r\n          filter: brightness(0.5);\r\n  width: 100%;\r\n  z-index: -1;\n}\n#content-wf[data-v-48107bee] {\r\n  z-index: 1;\r\n  color: white;\n}\nh1[data-v-48107bee] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\nh2[data-v-48107bee] {\r\n  text-align: center;\r\n  font-size: 3vw;\n}\np[data-v-48107bee] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 2vw;\n}\n.hexagonsHolder[data-v-48107bee],\r\n.activeHex[data-v-48107bee] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\n}\n.activeHex > div[data-v-48107bee] {\r\n  width: 50%;\n}\n#hex1[data-v-48107bee] {\r\n  background-image: url(\"/images/p1.jpg\");\n}\n#hex2[data-v-48107bee] {\r\n  background-image: url(\"/images/p2.jpg\");\n}\n#hex3[data-v-48107bee] {\r\n  background-image: url(\"/images/p3.jpg\");\n}\n#hex4[data-v-48107bee] {\r\n  background-image: url(\"/images/p4.jpg\");\n}\n#hex5[data-v-48107bee] {\r\n  background-image: url(\"/images/p5.jpg\");\n}\n#hex6[data-v-48107bee] {\r\n  background-image: url(\"/images/p6.jpg\");\n}\n.hexagon[data-v-48107bee] {\r\n  position: relative;\r\n  width: 150px;\r\n  height: 86.6px;\r\n  margin: 86.6px 20px;\r\n  background-size: auto 173.2051px;\r\n  background-position: center;\n}\n.hexTop[data-v-48107bee],\r\n.hexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 106.07px;\r\n  height: 106.07px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 21.97px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.hexTop[data-v-48107bee]:after,\r\n.hexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 150px;\r\n  height: 86.60254037844388px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-43.3013px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.hexTop[data-v-48107bee] {\r\n  top: -53.033px;\n}\n.hexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.hexBottom[data-v-48107bee] {\r\n  bottom: -53.033px;\n}\n.hexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.hexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 150px;\r\n  height: 86.6025px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n.activeHexagon[data-v-48107bee] {\r\n  left: calc(50% - 175px);\r\n  position: relative;\r\n  width: 350px;\r\n  height: 202.07px;\r\n  margin: 101.04px 0;\r\n  background-size: auto 404.1452px;\r\n  background-position: center;\r\n  -webkit-transition: 0.5s all;\r\n  transition: 0.5s all;\n}\n.activeHexTop[data-v-48107bee],\r\n.activeHexBottom[data-v-48107bee] {\r\n  position: absolute;\r\n  z-index: 1;\r\n  width: 247.49px;\r\n  height: 247.49px;\r\n  overflow: hidden;\r\n  -webkit-transform: scaleY(0.5774) rotate(-45deg);\r\n  transform: scaleY(0.5774) rotate(-45deg);\r\n  background: inherit;\r\n  left: 51.26px;\n}\r\n\r\n/*counter transform the bg image on the caps*/\n.activeHexTop[data-v-48107bee]:after,\r\n.activeHexBottom[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  width: 350px;\r\n  height: 202.07259421636903px;\r\n  -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  transform: rotate(45deg) scaleY(1.7321) translateY(-101.0363px);\r\n  -webkit-transform-origin: 0 0;\r\n  transform-origin: 0 0;\r\n  background: inherit;\n}\n.activeHexTop[data-v-48107bee] {\r\n  top: -123.7437px;\n}\n.activeHexTop[data-v-48107bee]:after {\r\n  background-position: center top;\n}\n.activeHexBottom[data-v-48107bee] {\r\n  bottom: -123.7437px;\n}\n.activeHexBottom[data-v-48107bee]:after {\r\n  background-position: center bottom;\n}\n.activeHexagon[data-v-48107bee]:after {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 0;\r\n  width: 350px;\r\n  height: 202.0726px;\r\n  z-index: 2;\r\n  background: inherit;\n}\n#sc[data-v-48107bee] {\r\n  position: relative;\r\n  bottom: -8vw; /* Yet to know why */\n}\n@media screen and (max-width: 800px) {\n.activeHex[data-v-48107bee] {\r\n    margin: 30px 0 0 0;\n}\n.activeHex > div[data-v-48107bee] {\r\n    width: 100%;\r\n    padding: 20px 0 20px 0;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -48414,8 +48414,13 @@ exports.push([module.i, "\nh1[data-v-48107bee] {\r\n  text-align: center;\r\n  f
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ScrollComponent_vue__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -48450,6 +48455,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       activeHexID: Math.ceil(Math.random() * 10 % 6),
       activeMember: [{}],
+      bdHeight: 0,
       members: [{
         name: "Syed Hameez Rehman",
         info: "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
@@ -48481,18 +48487,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       for (var i = 0; i < hexagons.length; i++) {
         hexagons[i].addEventListener("click", this.setActive);
       }
+
+      window.addEventListener("resize", this.resizeBD);
     },
     setActive: function setActive(hexagon) {
+      var memberInfo = document.getElementsByClassName("memberInfo")[0];
+
       //Start Fading Out
-      document.getElementsByClassName("memberInfo")[0].classList.add("fadeOut");
+      memberInfo.classList.add("fadeOut");
 
       //Set Timeout for FadeOut
       setTimeout(function () {
         //Remove Fade Out
-        document.getElementsByClassName("memberInfo")[0].classList.remove("fadeOut");
+        memberInfo.classList.remove("fadeOut");
 
         //Start Fading In
-        document.getElementsByClassName("memberInfo")[0].classList.add("fadeIn");
+        memberInfo.classList.add("fadeIn");
 
         //Change Data while fading In
         var clickedHexID = hexagon.target.getAttribute("id");
@@ -48502,14 +48512,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         //Set Timeout for Fade In
         setTimeout(function () {
           //Remove Fade In
-          document.getElementsByClassName("memberInfo")[0].classList.remove("fadeIn");
+          memberInfo.classList.remove("fadeIn");
         }, 250);
       }.bind(this), 250);
+    },
+    resizeBD: function resizeBD() {
+      //Set backdrop div size
+      this.bdHeight = document.getElementById("content-wf").clientHeight + 200; //322 is anchor fix height + paddings/margins
     }
   },
   mounted: function mounted() {
     this.initializeListeners();
     this.activeMember = this.members[this.activeHexID - 1];
+
+    this.bdHeight = document.getElementById("content-wf").clientHeight + 200; //322 is anchor fix height + paddings/margins
   }
 });
 
@@ -48521,55 +48537,62 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "contains", attrs: { id: "workforce" } },
-    [
-      _c("h1", [_vm._v("\r\n        " + _vm._s(_vm.heading) + "\r\n    ")]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "hexagonsHolder" },
-        _vm._l(6, function(n) {
-          return _c(
-            "div",
-            { key: n, staticClass: "hexagon", attrs: { id: "hex" + n } },
-            [
-              _c("div", { staticClass: "hexTop" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "hexBottom" })
-            ]
-          )
-        })
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "activeHex" }, [
-        _c("div", { staticClass: "hexagonHolder" }, [
-          _c(
-            "div",
-            {
-              staticClass: "activeHexagon",
-              attrs: { id: "hex" + _vm.activeHexID }
-            },
-            [
-              _c("div", { staticClass: "activeHexTop" }),
-              _vm._v(" "),
-              _c("div", { staticClass: "activeHexBottom" })
-            ]
-          )
+  return _c("div", { staticClass: "contains", attrs: { id: "workforce" } }, [
+    _c("div", {
+      style: { height: _vm.bdHeight + "px" },
+      attrs: { id: "backdrop" }
+    }),
+    _vm._v(" "),
+    _c(
+      "div",
+      { attrs: { id: "content-wf" } },
+      [
+        _c("h1", [_vm._v("\r\n        " + _vm._s(_vm.heading) + "\r\n    ")]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "hexagonsHolder" },
+          _vm._l(6, function(n) {
+            return _c(
+              "div",
+              { key: n, staticClass: "hexagon", attrs: { id: "hex" + n } },
+              [
+                _c("div", { staticClass: "hexTop" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "hexBottom" })
+              ]
+            )
+          })
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "activeHex" }, [
+          _c("div", { staticClass: "hexagonHolder" }, [
+            _c(
+              "div",
+              {
+                staticClass: "activeHexagon",
+                attrs: { id: "hex" + _vm.activeHexID }
+              },
+              [
+                _c("div", { staticClass: "activeHexTop" }),
+                _vm._v(" "),
+                _c("div", { staticClass: "activeHexBottom" })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "memberInfo animated" }, [
+            _c("h2", [_vm._v(_vm._s(_vm.activeMember.name))]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.activeMember.info))])
+          ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "memberInfo animated" }, [
-          _c("h2", [_vm._v(_vm._s(_vm.activeMember.name))]),
-          _vm._v(" "),
-          _c("p", [_vm._v(_vm._s(_vm.activeMember.info))])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("scroll-component", { attrs: { id: "sc", linkto: "#", down: "1" } })
-    ],
-    1
-  )
+        _c("scroll-component", { attrs: { id: "sc", linkto: "#", down: "1" } })
+      ],
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

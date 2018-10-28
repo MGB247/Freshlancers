@@ -1,5 +1,9 @@
 <template>
 <div class="contains" id="workforce">
+  <div  v-bind:style="{height: bdHeight + 'px'}"  id="backdrop">
+
+  </div>
+<div id="content-wf">
     <h1>
         {{heading}}
     </h1>
@@ -23,6 +27,7 @@
         </div>
     <scroll-component id="sc" linkto="#" down="1"></scroll-component>
 </div>
+</div>
 </template>
 
 <script>
@@ -32,6 +37,7 @@ export default {
     return {
       activeHexID: Math.ceil((Math.random() * 10) % 6),
       activeMember: [{}],
+      bdHeight: 0,
       members: [
         {
           name: "Syed Hameez Rehman",
@@ -76,23 +82,23 @@ export default {
       for (var i = 0; i < hexagons.length; i++) {
         hexagons[i].addEventListener("click", this.setActive);
       }
+
+      window.addEventListener("resize", this.resizeBD);
     },
     setActive: function(hexagon) {
+      var memberInfo = document.getElementsByClassName("memberInfo")[0];
+
       //Start Fading Out
-      document.getElementsByClassName("memberInfo")[0].classList.add("fadeOut");
+      memberInfo.classList.add("fadeOut");
 
       //Set Timeout for FadeOut
       setTimeout(
         function() {
           //Remove Fade Out
-          document
-            .getElementsByClassName("memberInfo")[0]
-            .classList.remove("fadeOut");
+          memberInfo.classList.remove("fadeOut");
 
           //Start Fading In
-          document
-            .getElementsByClassName("memberInfo")[0]
-            .classList.add("fadeIn");
+          memberInfo.classList.add("fadeIn");
 
           //Change Data while fading In
           var clickedHexID = hexagon.target.getAttribute("id");
@@ -102,24 +108,44 @@ export default {
           //Set Timeout for Fade In
           setTimeout(function() {
             //Remove Fade In
-            document
-              .getElementsByClassName("memberInfo")[0]
-              .classList.remove("fadeIn");
+            memberInfo.classList.remove("fadeIn");
           }, 250);
         }.bind(this),
         250
       );
+    },
+    resizeBD: function() {
+      //Set backdrop div size
+      this.bdHeight = document.getElementById("content-wf").clientHeight + 200; //322 is anchor fix height + paddings/margins
     }
   },
   mounted() {
     this.initializeListeners();
     this.activeMember = this.members[this.activeHexID - 1];
+
+    this.bdHeight = document.getElementById("content-wf").clientHeight + 200; //322 is anchor fix height + paddings/margins
   }
 };
 </script>
 
 
 <style scoped>
+#backdrop {
+  position: absolute;
+  background-image: url("/images/code.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(255, 255, 255);
+  filter: brightness(0.5);
+  width: 100%;
+  z-index: -1;
+}
+
+#content-wf {
+  z-index: 1;
+  color: white;
+}
+
 h1 {
   text-align: center;
   font-size: 5vw;
@@ -306,8 +332,12 @@ p {
 }
 
 @media screen and (max-width: 800px) {
+  .activeHex {
+    margin: 30px 0 0 0;
+  }
   .activeHex > div {
     width: 100%;
+    padding: 20px 0 20px 0;
   }
 }
 </style>

@@ -35,8 +35,8 @@
             .contains::before { /* Fix for correct scroll to content for anchors */
                 content: "";
                 display: block;
-                height: 200px; /* fixed header height*/
-                margin: -200px 0 0; /* negative fixed header height */
+                height: 100px; /* fixed header height*/
+                margin: -100px 0 0; /* negative fixed header height */
 }
         </style>
     </head>
