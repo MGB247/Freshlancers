@@ -31,7 +31,7 @@ export default {
       }
 
       document.addEventListener("scroll", this.setFilter);
-      document.addEventListener("scroll", this.setActiveByBtn);
+      window.addEventListener("scroll", this.setActiveByBtn);
     },
 
     //Set Currently Active Link Color

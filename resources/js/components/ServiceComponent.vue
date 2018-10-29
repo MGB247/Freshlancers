@@ -1,10 +1,10 @@
 <template>
     <div class="contains" id="services">
-        <h1>
+        <h1 data-aos="fade-down">
             {{heading}}
         </h1>
         <div class="content">
-            <div v-for="service in services" :key="service.id">
+            <div data-aos="flip-up" v-for="service in services" :key="service.id">
                 <img v-bind:src="service.img" v-bind:alt="service.name">
                 <p>{{service.info}}</p>
             </div>

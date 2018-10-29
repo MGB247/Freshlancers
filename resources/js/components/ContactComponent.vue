@@ -1,11 +1,11 @@
 <template>
     <div class="contains" id="contact">
         <div class="content">
-            <h1>
+            <h1 data-aos="fade-up">
             {{heading}}
             </h1>
             <div class="contacts">
-                <div v-for="contact in contacts" :key="contact.id">
+                <div data-aos="fade-down" v-for="contact in contacts" :key="contact.id">
                     <i v-bind:class="contact.icon" v-bind:style="{color: contact.color}"></i>
                     <a v-for="link in contact.links" :key="link.id" v-bind:href="link.href">{{link.info}}</a>
                 </div>
@@ -91,7 +91,6 @@ export default {
   },
   mounted() {
     this.fillContacts();
-    console.log(window.location.hash);
   }
 };
 </script>

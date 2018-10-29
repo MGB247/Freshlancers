@@ -1,5 +1,5 @@
 <template>
-    <div class="contains" id="slideshow" v-bind:style="{height: WHeight + 'px', width: WWidth + 'px'}">
+    <div data-aos="zoom-out" data-aos-duration="500" class="contains" id="slideshow" v-bind:style="{height: WHeight + 'px', width: WWidth + 'px'}">
         <img v-bind:src="activeSlide" alt="Image Not Available">
         <button id="closeBtn" v-on:click="close"> <i class="fas fa-times-circle"></i> </button>
         <button id="prevBtn" v-on:click="previousSlide"> <i class="fas fa-arrow-circle-left"></i> </button>
@@ -28,6 +28,7 @@ export default {
       this.WHeight = window.innerHeight;
     },
     close: function() {
+      //Inform to parent that Slide Show is closed
       this.$emit("close");
     },
     previousSlide: function() {

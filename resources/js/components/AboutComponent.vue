@@ -1,13 +1,13 @@
 <template>
     <div id="about" class="contains" >
-        <h1>
+        <h1 data-aos="fade-down">
             {{heading}}
         </h1>
         <div class="content">
-            <div class="paragraph">
+            <div data-aos="fade-right" class="paragraph">
                 <p>awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd</p>
             </div>
-            <div class="image">
+            <div data-aos="fade-left" class="image">
                 <img src="/images/abt.png" alt="About Us">
             </div>
         </div>

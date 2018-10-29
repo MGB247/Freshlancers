@@ -8,6 +8,14 @@ require("./bootstrap");
 
 window.Vue = require("vue");
 
+import AOS from "aos";
+
+AOS.init({ duration: 1000 });
+
+window.onload = function() {
+    AOS.refresh();
+};
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

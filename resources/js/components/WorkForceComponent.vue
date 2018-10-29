@@ -1,27 +1,27 @@
 <template>
 <div id="workforce" class="contains "> 
 <div id="workforceInner">
-  <div  v-bind:style="{height: bdHeight + 'px'}"  id="backdrop">
+  <div data-aos="fade-up"  v-bind:style="{height: bdHeight + 'px'}"  id="backdrop">
 
   </div>
 <div class="content">
-    <h1>
+    <h1 data-aos="fade-up">
         {{heading}}
     </h1>
         <div class="hexagonsHolder">
-            <div v-for="member in members" v-bind:id="'hex' + member.id" class="hexagon" :key="member.id">
+            <div data-aos="flip-down" v-for="member in members" v-bind:id="'hex' + member.id" class="hexagon" :key="member.id">
             <div class="hexTop"></div>
             <div class="hexBottom"></div>
         </div>
         </div>
-        <div class="activeHex">
+        <div data-aos="fade-right" class="activeHex">
             <div class="hexagonHolder">
             <div class="activeHexagon" v-bind:id="'hex' + activeHexID">
             <div class="activeHexTop"></div>
             <div class="activeHexBottom"></div>
             </div>
             </div>
-            <div class="memberInfo animated">
+            <div data-aos="fade-down-left" class="memberInfo animated">
             <h2>{{activeMember.name}}</h2>
             <p>{{activeMember.info}}</p>
             </div>
@@ -52,7 +52,7 @@ export default {
     initialize: function() {
       window.addEventListener("resize", this.resizeBD);
 
-      //Things to be dont after loading the doc (like event assigning)
+      //Things to be done after loading the doc (like event assigning)
       window.addEventListener("load", this.loader);
     },
     setActive: function(hexagon) {

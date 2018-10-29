@@ -1,15 +1,15 @@
 <template>
     <div class="contains" id="recentwork">
-        <h1>
+        <h1 data-aos="fade-up">
             {{heading}}
         </h1>
         <div class="content">
-            <div v-for="work in works" :key="work.id" v-bind:id="work.id" class="work">
+            <div data-aos="flip-down" v-for="work in works" :key="work.id" v-bind:id="work.id" class="work">
                 <div  v-bind:style="work.thumb" class="hexagon">
                     <div class="hexTop"></div>
                     <div class="hexBottom"></div>
                 </div>
-                <p>{{work.name}}</p>
+                <p >{{work.name}}</p>
             </div>
         </div>
         <slide-show-component v-on:close="close" v-if="showWork" v-bind:heading="activeWork.name" v-bind:slides="activeWork.slides"></slide-show-component>
@@ -46,7 +46,10 @@ export default {
     },
     setActive: function(work) {
       var workI = work.target;
+
+      //Work only if there is a class attribute
       if (work.target.getAttribute("class")) {
+        //Set Work if childs are clicked
         if (
           work.target.getAttribute("class") == "hexTop" ||
           work.target.getAttribute("class") == "hexBottom"
