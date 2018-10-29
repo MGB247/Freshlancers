@@ -48584,7 +48584,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     initialize: function initialize() {
       window.addEventListener("resize", this.resizeBD);
 
-      //Things to be dont after loading the doc (like event assigning)
+      //Things to be done after loading the doc (like event assigning)
       window.addEventListener("load", this.loader);
     },
     setActive: function setActive(hexagon) {
@@ -49132,7 +49132,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     setActive: function setActive(work) {
       var workI = work.target;
+
+      //Work only if there is a class attribute
       if (work.target.getAttribute("class")) {
+        //Set Work if childs are clicked
         if (work.target.getAttribute("class") == "hexTop" || work.target.getAttribute("class") == "hexBottom") {
           workI = workI.parentNode.parentNode;
         } else if (work.target.getAttribute("class") == "hexagon") {
@@ -49305,6 +49308,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.WHeight = window.innerHeight;
     },
     close: function close() {
+      //Inform to parent that Slide Show is closed
       this.$emit("close");
     },
     previousSlide: function previousSlide() {
@@ -49526,7 +49530,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n*[data-v-2b26a8a8] {\r\n  color: white;\n}\n.content[data-v-2b26a8a8] {\r\n  background-color: black;\n}\nh1[data-v-2b26a8a8] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\na[data-v-2b26a8a8] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 1.5vw;\r\n  display: block;\n}\ni[data-v-2b26a8a8] {\r\n  font-size: 3vw;\n}\n.contacts[data-v-2b26a8a8] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  padding: 100px;\n}\n.contacts > div[data-v-2b26a8a8] {\r\n  text-align: center;\n}\r\n", ""]);
+exports.push([module.i, "\n*[data-v-2b26a8a8] {\r\n  color: white;\n}\n.content[data-v-2b26a8a8] {\r\n  background-color: black;\n}\nh1[data-v-2b26a8a8] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\na[data-v-2b26a8a8] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 1.5vw;\r\n  display: block;\n}\na[data-v-2b26a8a8]:hover {\r\n  color: unset;\n}\ni[data-v-2b26a8a8] {\r\n  font-size: 3vw;\n}\n.contacts[data-v-2b26a8a8] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  padding: 100px;\n}\n.contacts > div[data-v-2b26a8a8] {\r\n  text-align: center;\n}\r\n", ""]);
 
 // exports
 
@@ -49622,7 +49626,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   mounted: function mounted() {
     this.fillContacts();
-    console.log(window.location.hash);
   }
 });
 

@@ -116,6 +116,10 @@ a {
   display: block;
 }
 
+a:hover {
+  color: unset;
+}
+
 i {
   font-size: 3vw;
 }
