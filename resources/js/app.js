@@ -29,6 +29,10 @@ Vue.component(
     "recent-work-component",
     require("./components/RecentWorkComponent.vue")
 );
+Vue.component(
+    "contact-component",
+    require("./components/ContactComponent.vue")
+);
 
 const app = new Vue({
     el: "#app"

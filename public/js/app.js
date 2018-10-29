@@ -14349,7 +14349,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(16);
-module.exports = __webpack_require__(83);
+module.exports = __webpack_require__(88);
 
 
 /***/ }),
@@ -14378,6 +14378,7 @@ Vue.component("about-component", __webpack_require__(58));
 Vue.component("work-force-component", __webpack_require__(63));
 Vue.component("service-component", __webpack_require__(68));
 Vue.component("recent-work-component", __webpack_require__(73));
+Vue.component("contact-component", __webpack_require__(83));
 
 var app = new Vue({
     el: "#app"
@@ -47817,6 +47818,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
 
       document.addEventListener("scroll", this.setFilter);
+      document.addEventListener("scroll", this.setActiveByBtn);
     },
 
     //Set Currently Active Link Color
@@ -47826,6 +47828,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         links[i].classList.remove("active");
       }
       navItem.target.classList.add("active");
+    },
+
+    setActiveByBtn: function setActiveByBtn() {
+      //If Scroll component is used to scroll
+      var links = document.getElementsByClassName("nav-item");
+      for (var i = 0; i < links.length; i++) {
+        if (links[i].getAttribute("href") == window.location.hash) {
+          for (var j = 0; j < links.length; j++) {
+            links[j].classList.remove("active");
+          }
+          links[i].classList.add("active");
+          break;
+        }
+      }
     },
 
     //Add filter to Navbar on Scroll
@@ -47944,9 +47960,11 @@ var staticRenderFns = [
             [_vm._v("Our Work")]
           ),
           _vm._v(" "),
-          _c("a", { staticClass: "nav-item nav-link", attrs: { href: "#d" } }, [
-            _vm._v("Contact")
-          ])
+          _c(
+            "a",
+            { staticClass: "nav-item nav-link", attrs: { href: "#contact" } },
+            [_vm._v("Contact")]
+          )
         ])
       ]
     )
@@ -48132,6 +48150,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+//Works well with Scroll behaviour smooth
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["linkto", "up", "down", "color"]
 });
@@ -49353,7 +49372,7 @@ var render = function() {
           })
         : _vm._e(),
       _vm._v(" "),
-      _c("scroll-component", { attrs: { linkto: "#", down: "1" } })
+      _c("scroll-component", { attrs: { linkto: "#contact", down: "1" } })
     ],
     1
   )
@@ -49370,6 +49389,237 @@ if (false) {
 
 /***/ }),
 /* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(84)
+}
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = __webpack_require__(86)
+/* template */
+var __vue_template__ = __webpack_require__(87)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-2b26a8a8"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/ContactComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2b26a8a8", Component.options)
+  } else {
+    hotAPI.reload("data-v-2b26a8a8", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(85);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("24683d66", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2b26a8a8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ContactComponent.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2b26a8a8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ContactComponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n*[data-v-2b26a8a8] {\r\n  color: white;\n}\n.content[data-v-2b26a8a8] {\r\n  background-color: black;\n}\nh1[data-v-2b26a8a8] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\na[data-v-2b26a8a8] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 1.5vw;\r\n  display: block;\n}\ni[data-v-2b26a8a8] {\r\n  font-size: 3vw;\n}\n.contacts[data-v-2b26a8a8] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  padding: 100px;\n}\n.contacts > div[data-v-2b26a8a8] {\r\n  text-align: center;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 86 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "contact",
+  props: ["heading"],
+  data: function data() {
+    return {
+      contacts: []
+    };
+  },
+  methods: {
+    fillContacts: function fillContacts() {
+      //Font Awesome Classes used as icons
+      this.contacts.push({
+        icon: "fab fa-whatsapp",
+        color: "#25D366",
+        links: [
+        //Array of link object
+        {
+          id: this.length,
+          info: "03042802489",
+          href: "https://wa.me/923042802489"
+        }, {
+          id: this.length,
+          info: "03042802489",
+          href: "https://wa.me/923042802489"
+        }, {
+          id: this.length,
+          info: "03042802489",
+          href: "https://wa.me/923042802489"
+        }]
+      });
+      this.contacts.push({
+        icon: "fab fa-facebook",
+        color: "#3b5998",
+        links: [
+        //Array of link object
+        {
+          id: this.length,
+          info: "My FB Page",
+          href: "#"
+        }, {
+          id: this.length,
+          info: "Freshlancers",
+          href: "#"
+        }]
+      });
+      this.contacts.push({
+        icon: "fab fa-google",
+        color: "#DD4B39",
+        links: [
+        //Array of link object
+        {
+          id: this.length,
+          info: "Ghayas Baig",
+          href: "#"
+        }, {
+          id: this.length,
+          info: "Freshlancers",
+          href: "#"
+        }, {
+          id: this.length,
+          info: "Koi Aur",
+          href: "#"
+        }]
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.fillContacts();
+    console.log(window.location.hash);
+  }
+});
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "contains", attrs: { id: "contact" } }, [
+    _c("div", { staticClass: "content" }, [
+      _c("h1", [_vm._v("\n        " + _vm._s(_vm.heading) + "\n        ")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "contacts" },
+        _vm._l(_vm.contacts, function(contact) {
+          return _c(
+            "div",
+            { key: contact.id },
+            [
+              _c("i", { class: contact.icon, style: { color: contact.color } }),
+              _vm._v(" "),
+              _vm._l(contact.links, function(link) {
+                return _c("a", { key: link.id, attrs: { href: link.href } }, [
+                  _vm._v(_vm._s(link.info))
+                ])
+              })
+            ],
+            2
+          )
+        })
+      )
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2b26a8a8", module.exports)
+  }
+}
+
+/***/ }),
+/* 88 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

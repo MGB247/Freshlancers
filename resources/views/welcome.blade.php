@@ -49,6 +49,7 @@
             <service-component heading="What We Do"></service-component>
             <work-force-component heading="Workforce"></work-force-component>
             <recent-work-component heading="What We Have Done"></recent-work-component>
+            <contact-component heading="Contact Us"></contact-component>
             </div>
         </div>
     </body>

@@ -6,6 +6,7 @@
 </template>
 
 <script>
+//Works well with Scroll behaviour smooth
 export default {
   props: ["linkto", "up", "down", "color"]
 };

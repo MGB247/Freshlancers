@@ -13,7 +13,7 @@
             </div>
         </div>
         <slide-show-component v-on:close="close" v-if="showWork" v-bind:heading="activeWork.name" v-bind:slides="activeWork.slides"></slide-show-component>
-        <scroll-component linkto="#" down="1"></scroll-component>
+        <scroll-component linkto="#contact" down="1"></scroll-component>
     </div>
 </template>
 

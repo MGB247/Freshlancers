@@ -13,7 +13,7 @@
       <a class="nav-item nav-link" href="#services">Services</a>
       <a class="nav-item nav-link" href="#workforce">Workforce</a>
       <a class="nav-item nav-link" href="#recentwork">Our Work</a>
-      <a class="nav-item nav-link" href="#d">Contact</a>
+      <a class="nav-item nav-link" href="#contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -31,6 +31,7 @@ export default {
       }
 
       document.addEventListener("scroll", this.setFilter);
+      document.addEventListener("scroll", this.setActiveByBtn);
     },
 
     //Set Currently Active Link Color
@@ -40,6 +41,20 @@ export default {
         links[i].classList.remove("active");
       }
       navItem.target.classList.add("active");
+    },
+
+    setActiveByBtn: function() {
+      //If Scroll component is used to scroll
+      var links = document.getElementsByClassName("nav-item");
+      for (var i = 0; i < links.length; i++) {
+        if (links[i].getAttribute("href") == window.location.hash) {
+          for (var j = 0; j < links.length; j++) {
+            links[j].classList.remove("active");
+          }
+          links[i].classList.add("active");
+          break;
+        }
+      }
     },
 
     //Add filter to Navbar on Scroll
