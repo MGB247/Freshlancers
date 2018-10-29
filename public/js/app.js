@@ -49530,7 +49530,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n*[data-v-2b26a8a8] {\r\n  color: white;\n}\n.content[data-v-2b26a8a8] {\r\n  background-color: black;\n}\nh1[data-v-2b26a8a8] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\na[data-v-2b26a8a8] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 1.5vw;\r\n  display: block;\n}\na[data-v-2b26a8a8]:hover {\r\n  color: unset;\n}\ni[data-v-2b26a8a8] {\r\n  font-size: 3vw;\n}\n.contacts[data-v-2b26a8a8] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  padding: 100px;\n}\n.contacts > div[data-v-2b26a8a8] {\r\n  text-align: center;\n}\r\n", ""]);
+exports.push([module.i, "\n*[data-v-2b26a8a8] {\r\n  color: white;\n}\n.content[data-v-2b26a8a8] {\r\n  background-color: black;\n}\nh1[data-v-2b26a8a8] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\na[data-v-2b26a8a8] {\r\n  word-break: break-all;\r\n  padding: 30px;\r\n  font-size: 1vw;\r\n  display: block;\n}\na[data-v-2b26a8a8]:hover {\r\n  color: unset;\n}\ni[data-v-2b26a8a8] {\r\n  font-size: 3vw;\n}\n.contacts[data-v-2b26a8a8] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  -webkit-box-pack: justify;\r\n      -ms-flex-pack: justify;\r\n          justify-content: space-between;\r\n  padding: 100px;\n}\n.contacts > div[data-v-2b26a8a8] {\r\n  text-align: center;\n}\r\n", ""]);
 
 // exports
 

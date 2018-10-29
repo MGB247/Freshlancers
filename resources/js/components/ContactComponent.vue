@@ -112,7 +112,7 @@ h1 {
 a {
   word-break: break-all;
   padding: 30px;
-  font-size: 1.5vw;
+  font-size: 1vw;
   display: block;
 }
 
