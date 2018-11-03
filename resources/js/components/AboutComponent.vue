@@ -5,7 +5,7 @@
         </h1>
         <div class="content">
             <div data-aos="fade-right" class="paragraph">
-                <p>awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd</p>
+                <p><b>Freshlancers</b> is a small team of highly enthusiastic Software Engineers, Web Developers and Graphic Designers who strive to achieve the highest standards of work by meeting the requirements of customers upto their expectations! </p>
             </div>
             <div data-aos="fade-left" class="image">
                 <img src="/images/abt.png" alt="About Us">
@@ -44,7 +44,6 @@ h1 {
   padding: 30px;
   font-size: 2vw;
   font-style: italic;
-  word-break: break-all;
 }
 
 .paragraph,

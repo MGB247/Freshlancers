@@ -48333,7 +48333,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\nh1[data-v-5049bb1b] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\n.content[data-v-5049bb1b] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  width: 100%;\n}\n.paragraph[data-v-5049bb1b] {\r\n  padding: 30px;\r\n  font-size: 2vw;\r\n  font-style: italic;\r\n  word-break: break-all;\n}\n.paragraph[data-v-5049bb1b],\r\n.image[data-v-5049bb1b] {\r\n  width: 50%;\r\n  text-align: center;\n}\n.image img[data-v-5049bb1b] {\r\n  width: 80%;\r\n  position: relative;\n}\n@media screen and (max-width: 800px) {\n.paragraph[data-v-5049bb1b],\r\n  .image[data-v-5049bb1b] {\r\n    width: 100%;\n}\n}\r\n", ""]);
+exports.push([module.i, "\nh1[data-v-5049bb1b] {\r\n  text-align: center;\r\n  font-size: 5vw;\n}\n.content[data-v-5049bb1b] {\r\n  display: -webkit-box;\r\n  display: -ms-flexbox;\r\n  display: flex;\r\n  -webkit-box-align: center;\r\n      -ms-flex-align: center;\r\n          align-items: center;\r\n  -webkit-box-pack: center;\r\n      -ms-flex-pack: center;\r\n          justify-content: center;\r\n  -ms-flex-wrap: wrap;\r\n      flex-wrap: wrap;\r\n  width: 100%;\n}\n.paragraph[data-v-5049bb1b] {\r\n  padding: 30px;\r\n  font-size: 2vw;\r\n  font-style: italic;\n}\n.paragraph[data-v-5049bb1b],\r\n.image[data-v-5049bb1b] {\r\n  width: 50%;\r\n  text-align: center;\n}\n.image img[data-v-5049bb1b] {\r\n  width: 80%;\r\n  position: relative;\n}\n@media screen and (max-width: 800px) {\n.paragraph[data-v-5049bb1b],\r\n  .image[data-v-5049bb1b] {\r\n    width: 100%;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -48409,8 +48409,9 @@ var staticRenderFns = [
         { staticClass: "paragraph", attrs: { "data-aos": "fade-right" } },
         [
           _c("p", [
+            _c("b", [_vm._v("Freshlancers")]),
             _vm._v(
-              "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+              " is a small team of highly enthusiastic Software Engineers, Web Developers and Graphic Designers who strive to achieve the highest standards of work by meeting the requirements of customers upto their expectations! "
             )
           ])
         ]
