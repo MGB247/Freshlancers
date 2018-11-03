@@ -20,6 +20,7 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
-        "aos": "^2.3.4"
+        "aos": "^2.3.4",
+        "particlesjs": "^2.2.3"
     }
 }
