@@ -9,14 +9,14 @@
         {{heading}}
     </h1>
         <div class="hexagonsHolder">
-            <div data-aos="flip-down" v-for="member in members" v-bind:id="'hex' + member.id" class="hexagon" :key="member.id">
+            <div data-aos="flip-down" v-for="member in members" v-bind:id="'h' + member.id" class="hexagon" :key="member.id">
             <div class="hexTop"></div>
             <div class="hexBottom"></div>
         </div>
         </div>
         <div data-aos="fade-right" class="activeHex">
             <div class="hexagonHolder">
-            <div class="activeHexagon" v-bind:id="'hex' + activeHexID">
+            <div class="activeHexagon" v-bind:id="'h' + activeHexID">
             <div class="activeHexTop"></div>
             <div class="activeHexBottom"></div>
             </div>
@@ -82,7 +82,9 @@ export default {
 
           //Change Data while fading In
           var clickedHexID = hex.getAttribute("id");
-          this.activeHexID = clickedHexID[clickedHexID.length - 1];
+          clickedHexID = clickedHexID.substring(1,clickedHexID.length);
+          console.log(clickedHexID);
+          this.activeHexID = clickedHexID;
           this.activeMember = this.members[this.activeHexID];
 
           //Set Timeout for Fade In
@@ -113,37 +115,37 @@ export default {
         id: this.members.length,
         name: "Syed Hameez Rehman",
         info:
-          "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+          "Aflatoon. You just can't win an argument with this guy. He'll kill you with his never ending unjustified solely dependant proofs and theories that are waaay better then the consensus of even a billion people!"
       });
       this.members.push({
         id: this.members.length,
         name: "Muhammad Ghayas Baig",
         info:
-          "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+          "Rainbow Six Siege khareedlo..... Pleeaaassseee :)"
       });
       this.members.push({
         id: this.members.length,
         name: "Raafe Bin Asad",
         info:
-          "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+          "Code: Phantom. This former Fortnite player was boasted for his abilities to scout with his bare eyes playing the game at 30 fps on the minimum settings! You cant't reach his level of sophostication!"
       });
       this.members.push({
         id: this.members.length,
         name: "Abdullah Sherazi",
         info:
-          "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+          "Top drama, Pathan lover, seeking his 4.3 GPA he can even reach 18 for that!"
       });
       this.members.push({
         id: this.members.length,
         name: "Ehsan Shafique",
         info:
-          "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+          "Boiiii what u lookin at ? LOL"
       });
       this.members.push({
         id: this.members.length,
         name: "Syed Asad Haider Rizvi",
         info:
-          "awdasdawawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdawdasdawdd"
+          "Time traveler, dimension-independant, gravity denier; This agent can tell you where you stand in the future and can decide you to put there!"
       });
     }
   },
@@ -204,22 +206,22 @@ p {
   width: 50%;
 }
 
-#hex0 {
+#h0 {
   background-image: url("/images/p1.jpg");
 }
-#hex1 {
+#h1 {
   background-image: url("/images/p2.jpg");
 }
-#hex2 {
+#h2 {
   background-image: url("/images/p3.jpg");
 }
-#hex3 {
+#h3 {
   background-image: url("/images/p4.jpg");
 }
-#hex4 {
+#h4 {
   background-image: url("/images/p5.jpg");
 }
-#hex5 {
+#h5 {
   background-image: url("/images/p6.jpg");
 }
 .hexagon {
