@@ -178,6 +178,10 @@ export default {
   color: white;
 }
 
+.memberInfo{
+  word-wrap: break-word;
+}
+
 h1 {
   text-align: center;
   font-size: 5vw;
@@ -189,7 +193,6 @@ h2 {
 }
 
 p {
-  word-break: break-all;
   padding: 30px;
   font-size: 2vw;
 }
