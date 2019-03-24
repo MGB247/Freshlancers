@@ -1,20 +1,29 @@
 <template>
-    <div class="contains" id="recentwork">
-        <h1 data-aos="fade-up">
-            {{heading}}
-        </h1>
-        <div class="content">
-            <div data-aos="flip-down" v-for="work in works" :key="work.id" v-bind:id="work.id" class="work">
-                <div  v-bind:style="work.thumb" class="hexagon">
-                    <div class="hexTop"></div>
-                    <div class="hexBottom"></div>
-                </div>
-                <p >{{work.name}}</p>
-            </div>
+  <div class="contains" id="recentwork">
+    <h1 data-aos="fade-up">{{heading}}</h1>
+    <div class="content">
+      <div
+        data-aos="flip-down"
+        v-for="work in works"
+        :key="work.id"
+        v-bind:id="work.id"
+        class="work"
+      >
+        <div v-bind:style="work.thumb" class="hexagon">
+          <div class="hexTop"></div>
+          <div class="hexBottom"></div>
         </div>
-        <slide-show-component v-on:close="close" v-if="showWork" v-bind:heading="activeWork.name" v-bind:slides="activeWork.slides"></slide-show-component>
-        <scroll-component linkto="#contact" down="1"></scroll-component>
+        <p>{{work.name}}</p>
+      </div>
     </div>
+    <slide-show-component
+      v-on:close="close"
+      v-if="showWork"
+      v-bind:heading="activeWork.name"
+      v-bind:slides="activeWork.slides"
+    ></slide-show-component>
+    <scroll-component linkto="#contact" down="1"></scroll-component>
+  </div>
 </template>
 
 <script>
@@ -193,6 +202,17 @@ p {
   height: 86.6025px;
   z-index: 2;
   background: inherit;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 8vw;
+  }
+
+  p {
+    padding: 30px;
+    font-size: 4vw;
+  }
 }
 </style>
 

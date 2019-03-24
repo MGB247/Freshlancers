@@ -1,8 +1,8 @@
 <template>
-    <a v-if="linkto" v-bind:href="linkto">
+  <a v-if="linkto" v-bind:href="linkto">
     <i v-bind:style="{color: color}" v-if="down" class="fas fa-chevron-circle-down"></i>
     <i v-bind:style="{color: color}" v-if="up" class="fas fa-chevron-circle-up"></i>
-    </a>
+  </a>
 </template>
 
 <script>
@@ -28,6 +28,13 @@ i {
   margin-bottom: 3vw;
   margin-top: 3vw;
   color: black;
+}
+
+@media screen and (max-width: 800px) {
+  i {
+    left: calc(50% - 3vw);
+    font-size: 6vw;
+  }
 }
 </style>
 

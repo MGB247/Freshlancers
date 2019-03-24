@@ -1,36 +1,37 @@
 <template>
-<div id="workforce" class="contains "> 
-<div id="workforceInner">
-  <div data-aos="fade-up"  v-bind:style="{height: bdHeight + 'px'}"  id="backdrop">
-
-  </div>
-<div class="content">
-    <h1 data-aos="fade-up">
-        {{heading}}
-    </h1>
+  <div id="workforce" class="contains">
+    <div id="workforceInner">
+      <div data-aos="fade-up" v-bind:style="{height: bdHeight + 'px'}" id="backdrop"></div>
+      <div class="content">
+        <h1 data-aos="fade-up">{{heading}}</h1>
         <div class="hexagonsHolder">
-            <div data-aos="flip-down" v-for="member in members" v-bind:id="'h' + member.id" class="hexagon" :key="member.id">
+          <div
+            data-aos="flip-down"
+            v-for="member in members"
+            v-bind:id="'h' + member.id"
+            class="hexagon"
+            :key="member.id"
+          >
             <div class="hexTop"></div>
             <div class="hexBottom"></div>
-        </div>
+          </div>
         </div>
         <div data-aos="fade-right" class="activeHex">
-            <div class="hexagonHolder">
+          <div class="hexagonHolder">
             <div class="activeHexagon" v-bind:id="'h' + activeHexID">
-            <div class="activeHexTop"></div>
-            <div class="activeHexBottom"></div>
+              <div class="activeHexTop"></div>
+              <div class="activeHexBottom"></div>
             </div>
-            </div>
-            <div data-aos="fade-down-left" class="memberInfo animated">
+          </div>
+          <div data-aos="fade-down-left" class="memberInfo animated">
             <h2>{{activeMember.name}}</h2>
             <p>{{activeMember.info}}</p>
-            </div>
+          </div>
         </div>
-    
-</div>
-</div>
-<scroll-component linkto="#recentwork" down="1"></scroll-component>
-</div>
+      </div>
+    </div>
+    <scroll-component linkto="#recentwork" down="1"></scroll-component>
+  </div>
 </template>
 
 <script>
@@ -82,7 +83,7 @@ export default {
 
           //Change Data while fading In
           var clickedHexID = hex.getAttribute("id");
-          clickedHexID = clickedHexID.substring(1,clickedHexID.length);
+          clickedHexID = clickedHexID.substring(1, clickedHexID.length);
           console.log(clickedHexID);
           this.activeHexID = clickedHexID;
           this.activeMember = this.members[this.activeHexID];
@@ -120,8 +121,7 @@ export default {
       this.members.push({
         id: this.members.length,
         name: "Muhammad Ghayas Baig",
-        info:
-          "Rainbow Six Siege khareedlo..... Pleeaaassseee :)"
+        info: "Rainbow Six Siege khareedlo..... Pleeaaassseee :)"
       });
       this.members.push({
         id: this.members.length,
@@ -138,8 +138,7 @@ export default {
       this.members.push({
         id: this.members.length,
         name: "Ehsan Shafique",
-        info:
-          "Boiiii what u lookin at ? LOL"
+        info: "Boiiii what u lookin at ? LOL"
       });
       this.members.push({
         id: this.members.length,
@@ -178,7 +177,7 @@ export default {
   color: white;
 }
 
-.memberInfo{
+.memberInfo {
   word-wrap: break-word;
 }
 
@@ -369,6 +368,17 @@ p {
   .activeHex > div {
     width: 100%;
     padding: 20px 0 20px 0;
+  }
+  h1 {
+    font-size: 8vw;
+  }
+
+  h2 {
+    font-size: 6vw;
+  }
+
+  p {
+    font-size: 4vw;
   }
 }
 </style>

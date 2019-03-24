@@ -1,17 +1,15 @@
 <template>
-    <div class="contains" id="contact">
-        <div class="content">
-            <h1 data-aos="fade-up">
-            {{heading}}
-            </h1>
-            <div class="contacts">
-                <div data-aos="fade-down" v-for="contact in contacts" :key="contact.id">
-                    <i v-bind:class="contact.icon" v-bind:style="{color: contact.color}"></i>
-                    <a v-for="link in contact.links" :key="link.id" v-bind:href="link.href">{{link.info}}</a>
-                </div>
-            </div>
+  <div class="contains" id="contact">
+    <div class="content">
+      <h1 data-aos="fade-up">{{heading}}</h1>
+      <div class="contacts">
+        <div data-aos="fade-down" v-for="contact in contacts" :key="contact.id">
+          <i v-bind:class="contact.icon" v-bind:style="{color: contact.color}"></i>
+          <a v-for="link in contact.links" :key="link.id" v-bind:href="link.href">{{link.info}}</a>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -133,6 +131,25 @@ i {
 
 .contacts > div {
   text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .paragraph,
+  .image {
+    width: 100%;
+  }
+  i {
+    font-size: 6vw;
+  }
+  a {
+    font-size: 2.5vw;
+  }
+  h1 {
+    font-size: 8vw;
+  }
+  .contacts {
+    padding: 50px;
+  }
 }
 </style>
 

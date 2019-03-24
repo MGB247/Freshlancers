@@ -1,16 +1,14 @@
 <template>
-    <div class="contains" id="services">
-        <h1 data-aos="fade-down">
-            {{heading}}
-        </h1>
-        <div class="content">
-            <div data-aos="flip-up" v-for="service in services" :key="service.id">
-                <img v-bind:src="service.img" v-bind:alt="service.name">
-                <p>{{service.info}}</p>
-            </div>
-        </div>
-        <scroll-component id="sc" linkto="#workforce" down="1"></scroll-component>
+  <div class="contains" id="services">
+    <h1 data-aos="fade-down">{{heading}}</h1>
+    <div class="content">
+      <div data-aos="flip-up" v-for="service in services" :key="service.id">
+        <img v-bind:src="service.img" v-bind:alt="service.name">
+        <p>{{service.info}}</p>
+      </div>
     </div>
+    <scroll-component id="sc" linkto="#workforce" down="1"></scroll-component>
+  </div>
 </template>
 
 <script>
@@ -86,6 +84,16 @@ p {
   width: 30%;
   margin: 10px 1.66% 10px 1.66%;
   text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 8vw;
+  }
+
+  p {
+    font-size: 2vw;
+  }
 }
 </style>
 

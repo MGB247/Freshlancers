@@ -1,18 +1,18 @@
 <template>
-    <div id="about" class="contains" >
-        <h1 data-aos="fade-down">
-            {{heading}}
-        </h1>
-        <div class="content">
-            <div data-aos="fade-right" class="paragraph">
-                <p><b>Freshlancers</b> is a small team of highly enthusiastic Software Engineers, Web Developers and Graphic Designers who strive to achieve the highest standards of work by meeting the requirements of customers upto their expectations! </p>
-            </div>
-            <div data-aos="fade-left" class="image">
-                <img src="/images/abt.png" alt="About Us">
-            </div>
-        </div>
-        <scroll-component id="sc" linkto="#services" down="1"></scroll-component>
+  <div id="about" class="contains">
+    <h1 data-aos="fade-down">{{heading}}</h1>
+    <div class="content">
+      <div data-aos="fade-right" class="paragraph">
+        <p>
+          <b>Freshlancers</b> is a small team of highly enthusiastic Software Engineers, Web Developers and Graphic Designers who strive to achieve the highest standards of work by meeting the requirements of customers upto their expectations!
+        </p>
+      </div>
+      <div data-aos="fade-left" class="image">
+        <img src="/images/abt.png" alt="About Us">
+      </div>
     </div>
+    <scroll-component id="sc" linkto="#services" down="1"></scroll-component>
+  </div>
 </template>
 
 <script>
@@ -61,6 +61,12 @@ h1 {
   .paragraph,
   .image {
     width: 100%;
+  }
+  .paragraph {
+    font-size: 4vw;
+  }
+  h1 {
+    font-size: 8vw;
   }
 }
 </style>
